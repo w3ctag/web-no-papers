@@ -68,6 +68,9 @@ A number of serious concerns were raised in this objection:
   to publish, view, and participate on the Web,
   and corresponding fragmentation of the Web as a whole.
 * Reduction of user agency and perpetuation of existing societal power imbalances.
+* Expansion of use cases such as age verification
+  where credentials may be requested or required inappropriately or coercively,
+  raising concerns about government or platform overreach.
 
 A [W3C Council](https://www.w3.org/policies/process/#council) (which included members of the TAG)
 found these concerns to be serious and valid.
@@ -75,23 +78,22 @@ Despite this, the working group was allowed to form,
 though [the council report](https://www.w3.org/2025/02/council-report-fedid-dig-cred.html)
 included a recommendation that the group seriously consider these factors as they develop the API.
 
-The TAG believes that the addition of government issued digital credentials to the web
+The TAG believes that the addition of government-issued digital credentials to the Web
 has great potential for harm.
 
 The benefits of digital credentials
 must be aligned with the [web user's needs](https://www.w3.org/TR/design-principles/#priority-of-constituencies).
 Following our established [principles for privacy](https://w3ctag.github.io/privacy-principles/),
-this providing people the tools to understand and control
+this includes providing people the tools to understand and control
 how their personal information is collected and used.
 A browser--
 or user agent--
 plays an essential role
 in mediating these types of requests
-and enuring that people have agency.
+and ensuring that people have agency.
 
-The web should not become a platform that demands your government-issued identity documents,
-your "papers",
-in the course if its normal operation.
+The Web should not become a platform that demands your government-issued identity documents,
+in the course of its normal operation.
 Use of such credentials should be exceptional,
 only when required,
 and always on a person's own terms.
@@ -137,8 +139,6 @@ both on- and off-line,
 gathered into profiles.
 These profiles are then used for many purposes
 including advertising, credit ratings, and market analysis.
-
-
 
 ## Tracking with Identity
 
@@ -194,8 +194,24 @@ choose to take advantage of reduced friction to make a request.
 
 ### Authorizing Sites
 
-Something about EU/EIDAS
+The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
+envisions not only the issuance of digital credentials to individuals,
+but also the explicit authorization of businesses and service providers that will request those credentials.
+These relying parties must be registered and approved,
+before they are granted permission to request only specific types of information.
+This design is intended to ensure that businesses cannot request arbitrary personal data,
+and that their ability to do so is constrained, transparent, and subject to oversight.
 
+Importantly, the regulation includes a legal requirement for transparency:
+*relying parties should provide information regarding the data that they will request, if any, in order to provide their services and the reason for the request.*
+This contributes to accountability by making it possible for users to understand who is asking for what,
+and under what legal authority.
+This safeguard mitigates against some of the risks associated with digital credentials.
+However, it does not eliminate the need for scrutiny,
+particularly with regard to proportionality of use,
+user control, and the risk of such mechanisms becoming normalized across the web.
+Never the less, we recommend that the specification authors look to such mechanisms as a guide for mitigating
+potential harms in this area. 
 
 ### Case Study: Aadhaar
 
