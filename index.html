@@ -6,7 +6,7 @@
     <script
       defer
       class="remove"
-      src="https://www.w3.org/Tools/respec/respec-w3c">  
+      src="https://www.w3.org/Tools/respec/respec-w3c">
     </script>
     <script class="remove">
 var respecConfig = {
@@ -214,7 +214,7 @@ However, it does not eliminate the need for scrutiny,
 particularly with regard to proportionality of use,
 user control, and the risk of such mechanisms becoming normalized across the web.
 Nevertheless, we recommend that the specification authors look to such mechanisms as a guide for mitigating
-potential harms in this area. 
+potential harms in this area.
 
 ### Case Study: Aadhaar
 
@@ -249,10 +249,10 @@ its use was widespread in employment and other non-government interactions.
 Centralisation of trust can lead to a fragmented web, where access depends on which authorities
 a site or user is willing, or able, to work with.
 
-This risks excluding marginalized people. 
+This risks excluding marginalized people.
 For example, a visitor, migrant, or refugee may not be able to, or may not feel safe to, use credentials
-from their country of origin. 
-Especially where major platforms only recognize a narrow set of issuers, 
+from their country of origin.
+Especially where major platforms only recognize a narrow set of issuers,
 or only recognize issuers tied to a specific jurisdiction.
 The choice of jurisdiction is not often something that a user can choose,
 but instead one dictated by factors outside of their control.
@@ -304,13 +304,8 @@ that all users are equally able to produce a credential.
 ## Use Cases and Technical Options
 
 A better understanding of why sites seek to obtain and use identity is necessary.
-While the universality of a generic solution is appealing,
-each use case could depend on providing different sorts of information.
-
-[... need to have more on use cases in here ...]
-
-Each use case might require a different type of solution.
-Different solutions can have dramatically different privacy characteristics.
+Use cases justify approaches,
+each of which has very different privacy characteristics.
 
 For example,
 a [data minimization](https://w3ctag.github.io/privacy-principles/#data-minimization) approach might favor the use of selective disclosure,
@@ -323,6 +318,49 @@ such as a system to authorize access to online gambling,
 something that might be restricted by age or past history of susceptibility--
 might be best suited to a zero-knowledge system
 that provides strong unlinkability.
+
+### Use Case: Email Addresses
+
+A business might request an email address for different reasons.
+
+Superficially, someone sharing their email address
+gives sites the ability to communicate with that person at a later time.
+
+In addition to enabling communication,
+an email address is also an identifier.
+Asking a person for an email address
+also allows the recipient to match that email address
+with other places that the person shared the same email address.
+The use of email addresses therefore enables tracking and profiling people.
+
+Tracking activity and assembling profiles could be used
+to mitigate against the risk of abuse.
+Understanding that a person has a history of honest engagement
+with other businesses is valuable to a website,
+particularly where their own engagement with that person
+entails some amount of risk.
+
+This combination of purposes can be managed through the use of email aliases:
+alternative addresses for the same person that deliver to the same mailbox.
+These prevent the assembly of activity profiles
+because a fresh email address is provided for each context.
+
+Email aliases separate out the right to communicate from the right to identify.
+The challenge is that it needs to be easy to supply email aliases,
+something that is not well-supported.
+Integration with web form autofill can help people use this capability,
+but this often does not integrate well with email provider systems.
+This is an option not available in any offline contexts
+where people are asked to supply an email address.
+
+Furthermore, some sites refuse to do business
+with people who choose to supply email aliases,
+citing a higher risk of abuse.
+Finding technical solutions that allow businesses
+to affray these risks
+without enabling tracking or the creation of profiles
+is something that needs more research.
+
 
 ## Identity For Whom
 
