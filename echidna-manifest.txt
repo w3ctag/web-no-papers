@@ -1,2 +1,1 @@
-index.html?specStatus=CR&shortName=payment-request respec
-images/state-transitions.svg
+index.html respec
