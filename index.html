@@ -1,135 +1,268 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Preventing Abuse of Digital Identities</title>
-    <script
-      defer
-      class="remove"
-      src="https://www.w3.org/Tools/respec/respec-w3c">  
-    </script>
-    <script class="remove">
-var respecConfig = {
-  specStatus: "draft-finding",
-  editors: [
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 35.4.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+    
+    
+<title>Preventing Abuse of Digital Identities</title>
+    
+    
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:italic}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="color-scheme" content="light">
+<meta name="description" content="Abstract to come.">
+<link rel="canonical" href="https://www.w3.org/2001/tag/doc/web-no-papers/">
+<style>
+var:hover{text-decoration:underline;cursor:pointer}
+var.respec-hl{color:var(--color,#000);background-color:var(--bg-color);box-shadow:0 0 0 2px var(--bg-color)}
+@media (prefers-color-scheme:dark){
+var.respec-hl{filter:saturate(.9) brightness(.9)}
+}
+var.respec-hl-c1{--bg-color:#f4d200}
+var.respec-hl-c2{--bg-color:#ff87a2}
+var.respec-hl-c3{--bg-color:#96e885}
+var.respec-hl-c4{--bg-color:#3eeed2}
+var.respec-hl-c5{--bg-color:#eacfb6}
+var.respec-hl-c6{--bg-color:#82ddff}
+var.respec-hl-c7{--bg-color:#ffbcf2}
+@media print{
+var.respec-hl{background:0 0;color:#000;box-shadow:unset}
+}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#222}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#222;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "draft-finding",
+  "editors": [
     {
-      name: "Daniel Appelquist",
-      company: "W3C Invited Expert",
+      "name": "Daniel Appelquist",
+      "company": "W3C Invited Expert"
     },
     {
-      name: "Martin Thomson",
-      company: "Mozilla",
-    },
+      "name": "Martin Thomson",
+      "company": "Mozilla"
+    }
   ],
-  group: "tag",
-  wgPublicList: "www-tag",
-  github: "w3ctag/web-no-papers",
-  format: "markdown",
-  localBiblio: {
-    "EWP" : {
-      title: "Preventing Abuse of Digital Identities",
-      href: "https://www.w3.org/2001/tag/doc/web-no-papers/",
-      publisher: "W3C",
-    },
+  "group": "tag",
+  "wgPublicList": "www-tag",
+  "github": "w3ctag/web-no-papers",
+  "format": "markdown",
+  "localBiblio": {
+    "EWP": {
+      "title": "Preventing Abuse of Digital Identities",
+      "href": "https://www.w3.org/2001/tag/doc/web-no-papers/",
+      "publisher": "W3C"
+    }
   },
-};
-</script>
-</head>
-<body class="informative">
-<section id="abstract">
+  "publishISODate": "2025-05-29T00:00:00.000Z",
+  "generatedSubtitle": "W3C Draft TAG Finding 29 May 2025"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head>
+<body class="informative h-entry"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">Preventing Abuse of Digital Identities</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-05-29">29 May 2025</time></p>
+    <details open="">
+      <summary>More details about this document</summary>
+      <dl>
+        <dt>This version:</dt><dd>
+                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250529/">https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250529/</a>
+              </dd>
+        <dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/2001/tag/doc/web-no-papers/">https://www.w3.org/2001/tag/doc/web-no-papers/</a>
+              </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://w3ctag.github.io/web-no-papers/">https://w3ctag.github.io/web-no-papers/</a></dd>
+        <dt>History:</dt><dd>
+                    <a href="https://github.com/w3ctag/web-no-papers/commits/">Commit history</a>
+                  </dd>
+        
+        
+        
+        
+        
+        <dt>Editors:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Daniel Appelquist</span> (<span class="p-org org h-org">W3C Invited Expert</span>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Martin Thomson</span> (<span class="p-org org h-org">Mozilla</span>)
+  </dd>
+        
+        
+        <dt>Feedback:</dt><dd>
+        <a href="https://github.com/w3ctag/web-no-papers/">GitHub w3ctag/web-no-papers</a>
+        (<a href="https://github.com/w3ctag/web-no-papers/pulls/">pull requests</a>,
+        <a href="https://github.com/w3ctag/web-no-papers/issues/new/choose">new issue</a>,
+        <a href="https://github.com/w3ctag/web-no-papers/issues/">open issues</a>)
+      </dd><dd><a href="mailto:www-tag@w3.org?subject=%5Bweb-no-papers%5D%20YOUR%20TOPIC%20HERE">www-tag@w3.org</a> with subject line <kbd>[web-no-papers] <em>… message topic …</em></kbd> (<a rel="discussion" href="https://lists.w3.org/Archives/Public/www-tag">archives</a>)</dd>
+        
+        
+      </dl>
+    </details>
+    
+    
+    <p class="copyright">
+    <a href="https://www.w3.org/policies/#copyright">Copyright</a>
+    ©
+    2025
+    
+    <a href="https://www.w3.org/">World Wide Web Consortium</a>.
+    <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
+    <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/copyright/software-license-2023/" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+    <hr title="Separator for header">
+  </div><section id="abstract" class="introductory"><h2>Abstract</h2>
 <p>Abstract to come.</p>
 </section>
-<section id="sotd">
+<section id="sotd" class="introductory"><h2>Status of This Document</h2>
 <p>This is a draft TAG finding and does not yet represent TAG consensus.</p>
-</section>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#uses-for-identity-information"><bdi class="secno">2. </bdi>Uses for Identity Information</a></li><li class="tocline"><a class="tocxref" href="#tracking-with-identity"><bdi class="secno">3. </bdi>Tracking with Identity</a></li><li class="tocline"><a class="tocxref" href="#overuse-of-identity"><bdi class="secno">4. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorizing-sites"><bdi class="secno">4.1 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#case-study-aadhaar"><bdi class="secno">4.2 </bdi>Case Study: Aadhaar</a></li></ol></li><li class="tocline"><a class="tocxref" href="#centralization-of-trust"><bdi class="secno">5. </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">6. </bdi>Exclusion</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</a></li><li class="tocline"><a class="tocxref" href="#identity-for-whom"><bdi class="secno">8. </bdi>Identity For Whom</a></li></ol></nav>
 
-## Introduction
-
-APIs that facilitate access to verifiable claims about identity,
-such as the proposed [Digital Credentials API](https://wicg.github.io/digital-credentials/),
+<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
+<p>APIs that facilitate access to verifiable claims about identity,
+such as the proposed <a href="https://wicg.github.io/digital-credentials/">Digital Credentials API</a>,
 are starting to be developed and deployed.
 National digital identity systems are being legislated in a large number of jurisdictions.
-The [Federated Identity Working Group](https://www.w3.org/2025/02/wg-fedid.html)
-includes this API as a chartered deliverable.
-
-These APIs represent a convenient way to access proof of legal identity,
+The <a href="https://www.w3.org/2025/02/wg-fedid.html">Federated Identity Working Group</a>
+includes this API as a chartered deliverable.</p>
+<p>These APIs represent a convenient way to access proof of legal identity,
 backed by large-scale government projects in multiple jurisdictions.
 This convenience leads to a range of implications for privacy,
-as noted in a recent [objection](https://www.w3.org/2025/02/council-report-fedid-dig-cred.html)
-to the formation of the Federated Identity Working Group.
-
-A number of serious concerns were raised in this objection:
-
-* Increased sharing of personal data
-  and corresponding reduction of privacy
-  due to reduced friction for sharing such data.
-* Increased centralization of trust on the Web.
-* Increased restriction of the ability
-  to publish, view, and participate on the Web,
-  and corresponding fragmentation of the Web as a whole.
-* Reduction of user agency and perpetuation of existing societal power imbalances.
-* Expansion of use cases such as age verification
-  where credentials may be requested or required inappropriately or coercively,
-  raising concerns about government or platform overreach.
-
-A [W3C Council](https://www.w3.org/policies/process/#council) (which included members of the TAG)
+as noted in a recent <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html">objection</a>
+to the formation of the Federated Identity Working Group.</p>
+<p>A number of serious concerns were raised in this objection:</p>
+<ul>
+<li>Increased sharing of personal data
+and corresponding reduction of privacy
+due to reduced friction for sharing such data.</li>
+<li>Increased centralization of trust on the Web.</li>
+<li>Increased restriction of the ability
+to publish, view, and participate on the Web,
+and corresponding fragmentation of the Web as a whole.</li>
+<li>Reduction of user agency and perpetuation of existing societal power imbalances.</li>
+<li>Expansion of use cases such as age verification
+where credentials may be requested or required inappropriately or coercively,
+raising concerns about government or platform overreach.</li>
+</ul>
+<p>A <a href="https://www.w3.org/policies/process/#council"><abbr title="World Wide Web Consortium">W3C</abbr> Council</a> (which included members of the TAG)
 found these concerns to be serious and valid.
 Despite this, the working group was allowed to form,
-though [the council report](https://www.w3.org/2025/02/council-report-fedid-dig-cred.html)
-included a recommendation that the group seriously consider these factors as they develop the API.
-
-The TAG believes that the addition of government-issued digital credentials to the web
-has great potential for harm.
-
-The benefits of digital credentials
-must be aligned with the [web user's needs](https://www.w3.org/TR/design-principles/#priority-of-constituencies).
-Following our established [principles for privacy](https://w3ctag.github.io/privacy-principles/),
+though <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html">the council report</a>
+included a recommendation that the group seriously consider these factors as they develop the API.</p>
+<p>The TAG believes that the addition of government-issued digital credentials to the web
+has great potential for harm.</p>
+<p>The benefits of digital credentials
+must be aligned with the <a href="https://www.w3.org/TR/design-principles/#priority-of-constituencies">web user's needs</a>.
+Following our established <a href="https://w3ctag.github.io/privacy-principles/">principles for privacy</a>,
 this includes providing people the tools to understand and control
 how their personal information is collected and used.
-A browser--
-or user agent--
+A browser —
+or user agent —
 plays an essential role
 in mediating these types of requests
-and ensuring that people have agency.
-
-The web should not become a platform that demands your government-issued identity documents,
+and ensuring that people have agency.</p>
+<p>The web should not become a platform that demands your government-issued identity documents,
 in the course of its normal operation.
 Use of such credentials should be exceptional,
 only when required,
-and always on a person's own terms.
-
-The TAG therefore encourages contributors
-to pay special attention to the societal impact of digital credentials.
-
-## Uses for Identity Information
-
-Before examining the harms,
+and always on a person's own terms.</p>
+<p>The TAG therefore encourages contributors
+to pay special attention to the societal impact of digital credentials.</p>
+</section><section id="uses-for-identity-information"><div class="header-wrapper"><h2 id="x2-uses-for-identity-information"><bdi class="secno">2. </bdi>Uses for Identity Information</h2><a class="self-link" href="#uses-for-identity-information" aria-label="Permalink for Section 2."></a></div>
+<p>Before examining the harms,
 it is important to understand why sites seek identity information
 from visitors.
 There are multiple reasons that a site might seek to ask for proof of legal identity.
-Motivations include:
-
-* Legal mandates,
-  such as know-your-customer regulations common to financial services.
-* Distinguishing between visits from real people and visits from bots,
-  which might need to be handled specially.
-* Obtaining some means of holding a person accountable
-  for a range of abusive behavior.
-* Avoiding impersonation,
-  especially for social media accounts of prominent individuals or organizations.
-* Personalization,
-  such as being able to appear more friendly by greeting a person by their name.
-
-This list is far from exhaustive.
-Often, there are multiple reasons that a site seeks to identify a visitor.
-
-Once someone has provided an identifier,
+Motivations include:</p>
+<ul>
+<li>Legal mandates,
+such as know-your-customer regulations common to financial services.</li>
+<li>Distinguishing between visits from real people and visits from bots,
+which might need to be handled specially.</li>
+<li>Obtaining some means of holding a person accountable
+for a range of abusive behavior.</li>
+<li>Avoiding impersonation,
+especially for social media accounts of prominent individuals or organizations.</li>
+<li>Personalization,
+such as being able to appear more friendly by greeting a person by their name.</li>
+</ul>
+<p>This list is far from exhaustive.
+Often, there are multiple reasons that a site seeks to identify a visitor.</p>
+<p>Once someone has provided an identifier,
 sites are technically able to use identifiers in any way they choose.
 Technical privacy protections that might be implemented in a browser cannot help.
 Legal protections might apply to misuse of identifying information,
-but that depends on effective detection and enforcement.
-
-Perhaps the most serious consequence of obtaining an identifier
+but that depends on effective detection and enforcement.</p>
+<p>Perhaps the most serious consequence of obtaining an identifier
 is that sites are then able to trade information
 across any site where a person has provided that same identifier.
 This enables tracking,
@@ -138,210 +271,170 @@ where people their activities across multiple contexts,
 both on- and off-line,
 gathered into profiles.
 These profiles are then used for many purposes
-including advertising, credit ratings, and market analysis.
-
-## Tracking with Identity
-
-For all its benefits,
+including advertising, credit ratings, and market analysis.</p>
+</section><section id="tracking-with-identity"><div class="header-wrapper"><h2 id="x3-tracking-with-identity"><bdi class="secno">3. </bdi>Tracking with Identity</h2><a class="self-link" href="#tracking-with-identity" aria-label="Permalink for Section 3."></a></div>
+<p>For all its benefits,
 one of the most shameful aspects of the web is how it has allowed sites to surveil people.
 Sites take what they learn about the people that visit them
-and treat that information as a commodity to be sold or exchanged.
-
-The TAG has long regarded [unsanctioned tracking as unacceptable](https://www.w3.org/2001/tag/doc/unsanctioned-tracking/)
+and treat that information as a commodity to be sold or exchanged.</p>
+<p>The TAG has long regarded <a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/">unsanctioned tracking as unacceptable</a>
 and has advocated for technical measures that curtail these practices.
-Notably, [the TAG unequivocally condemned cross-site cookies and called for browsers to disable them](https://www.w3.org/2001/tag/doc/web-without-3p-cookies/).
+Notably, <a href="https://www.w3.org/2001/tag/doc/web-without-3p-cookies/">the TAG unequivocally condemned cross-site cookies and called for browsers to disable them</a>.
 Positive trends from browsers in recent years include a range of other technical measures,
-including reductions in fingerprinting, state partitioning, and [navigation tracking mitigations](https://privacycg.github.io/nav-tracking-mitigations/).
-
-These technical measures are consistent with the TAG's [documented principles for privacy](https://w3ctag.github.io/privacy-principles/).
+including reductions in fingerprinting, state partitioning, and <a href="https://privacycg.github.io/nav-tracking-mitigations/">navigation tracking mitigations</a>.</p>
+<p>These technical measures are consistent with the TAG's <a href="https://w3ctag.github.io/privacy-principles/">documented principles for privacy</a>.
 These principles articulate why privacy is essential to maintaining personal autonomy.
 The same high-level principles are shared
 by the many jurisdictions that have implemented data protection legislation.
-The goal of data protection is to protect a person's rights over how data about them is used.
-
-In part due to these protections,
-tracking practices are moving away from largely hidden mechanisms--
-like cookies--
+The goal of data protection is to protect a person's rights over how data about them is used.</p>
+<p>In part due to these protections,
+tracking practices are moving away from largely hidden mechanisms —
+like cookies —
 to human interactions based on consent.
 That is, sites ask people to identify themselves.
 Once identifying information is provided,
-sites might then assume that they have consent to use that information for a range of purposes.
-
-Identity information might be provided as an email address or phone number.
+sites might then assume that they have consent to use that information for a range of purposes.</p>
+<p>Identity information might be provided as an email address or phone number.
 However, more sites also seek to obtain legal names or other identifying information.
 Unauthenticated systems might offer people the ability to choose how they wish to be identified.
 For instance, email services that provide temporary or site-specific aliases
 offer a way to create wholly-new or site-specific identities on demand.
-The same flexibility is not an option when providing a legal identity.
-
-Tracking with identity allows online activities
+The same flexibility is not an option when providing a legal identity.</p>
+<p>Tracking with identity allows online activities
 to be linked to offline activity.
 The result can be a comprehensive record of everything a person does:
 places they go,
 what sites they visit,
 what they say,
 who they are friends with,
-and more.
-
-
-## Overuse of Identity
-
-A streamlined process for providing verifiable identity
+and more.</p>
+</section><section id="overuse-of-identity"><div class="header-wrapper"><h2 id="x4-overuse-of-identity"><bdi class="secno">4. </bdi>Overuse of Identity</h2><a class="self-link" href="#overuse-of-identity" aria-label="Permalink for Section 4."></a></div>
+<p>A streamlined process for providing verifiable identity
 reduces the cost of requesting and providing that information.
 In turn, this might make sites that would otherwise not ask for information
-choose to take advantage of reduced friction to make a request.
-
-
-### Authorizing Sites
-
-The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
+choose to take advantage of reduced friction to make a request.</p>
+<section id="authorizing-sites"><div class="header-wrapper"><h3 id="x4-1-authorizing-sites"><bdi class="secno">4.1 </bdi>Authorizing Sites</h3><a class="self-link" href="#authorizing-sites" aria-label="Permalink for Section 4.1"></a></div>
+<p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
 envisions not only the issuance of digital credentials to individuals,
 but also the explicit authorization of businesses and service providers that will request those credentials.
 These relying parties must be registered and approved,
 before they are granted permission to request only specific types of information.
 This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
-and that their ability to do so is constrained, transparent, and subject to oversight.
-
-This depends on having a system for transparency:
-
-> relying parties should provide information regarding the data that they will request,
-> if any, in order to provide their services and the reason for the request.
-
-Transparency contributes to accountability by making it possible for users to understand who is asking for what,
+and that their ability to do so is constrained, transparent, and subject to oversight.</p>
+<p>This depends on having a system for transparency:</p>
+<blockquote>
+<p>relying parties should provide information regarding the data that they will request,
+if any, in order to provide their services and the reason for the request.</p>
+</blockquote>
+<p>Transparency contributes to accountability by making it possible for users to understand who is asking for what,
 and under what legal authority.
 This safeguard mitigates against some of the risks associated with digital credentials.
 However, it does not eliminate the need for scrutiny,
 particularly with regard to proportionality of use,
 user control, and the risk of such mechanisms becoming normalized across the web.
 Nevertheless, we recommend that the specification authors look to such mechanisms as a guide for mitigating
-potential harms in this area. 
-
-### Case Study: Aadhaar
-
-That digital credentials might be used to track people is not a fancy of science fiction,
-it is the lived experience of a very large number of people.
-
-In India,
+potential harms in this area.</p>
+</section><section id="case-study-aadhaar"><div class="header-wrapper"><h3 id="x4-2-case-study-aadhaar"><bdi class="secno">4.2 </bdi>Case Study: Aadhaar</h3><a class="self-link" href="#case-study-aadhaar" aria-label="Permalink for Section 4.2"></a></div>
+<p>That digital credentials might be used to track people is not a fancy of science fiction,
+it is the lived experience of a very large number of people.</p>
+<p>In India,
 the Aadhaar national identity scheme was introduced as a way to enable access to government services,
 like health, welfare, and food assistance.
 Though the legislation
 originally included the option for Aadhaar to be used by non-government actors,
 that provision
 (Section 57)
-was ruled [unconstitutional](https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf)
-by the Supreme Court in 2018.
-
-In 2025,
+was ruled <a href="https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf">unconstitutional</a>
+by the Supreme Court in 2018.</p>
+<p>In 2025,
 the Indian government has enabled wide use of Aadhar for any entitiy,
 expanding the set of recognized reasons
-to include "[promoting ease of living for residents](https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2098223)".
+to include "<a href="https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2098223">promoting ease of living for residents</a>".
 As a result,
 the roughly 1 billion Indian participants in the Aadhaar program
 are potentially subject to surveillance through the use of their unique 12 digit identifier,
-which links fingerprints and iris scans to name and other personal details.
-
-Despite Aadhar use being optional in law,
+which links fingerprints and iris scans to name and other personal details.</p>
+<p>Despite Aadhar use being optional in law,
 even prior to this change,
-its use was widespread in employment and other non-government interactions.
-
-## Centralization of Trust
-
-Centralisation of trust can lead to a fragmented web, where access depends on which authorities
-a site or user is willing, or able, to work with.
-
-This risks excluding marginalized people. 
+its use was widespread in employment and other non-government interactions.</p>
+</section></section><section id="centralization-of-trust"><div class="header-wrapper"><h2 id="x5-centralization-of-trust"><bdi class="secno">5. </bdi>Centralization of Trust</h2><a class="self-link" href="#centralization-of-trust" aria-label="Permalink for Section 5."></a></div>
+<p>Centralisation of trust can lead to a fragmented web, where access depends on which authorities
+a site or user is willing, or able, to work with.</p>
+<p>This risks excluding marginalized people.
 For example, a visitor, migrant, or refugee may not be able to, or may not feel safe to, use credentials
-from their country of origin. 
-Especially where major platforms only recognize a narrow set of issuers, 
+from their country of origin.
+Especially where major platforms only recognize a narrow set of issuers,
 or only recognize issuers tied to a specific jurisdiction.
 The choice of jurisdiction is not often something that a user can choose,
 but instead one dictated by factors outside of their control.
-This could undermine the global and open nature of the web.
-
-## Exclusion
-
-Online services that have [real-name policies](https://en.wikipedia.org/wiki/Real-name_system) are justifiably controversial.
+This could undermine the global and open nature of the web.</p>
+</section><section id="exclusion"><div class="header-wrapper"><h2 id="x6-exclusion"><bdi class="secno">6. </bdi>Exclusion</h2><a class="self-link" href="#exclusion" aria-label="Permalink for Section 6."></a></div>
+<p>Online services that have <a href="https://en.wikipedia.org/wiki/Real-name_system">real-name policies</a> are justifiably controversial.
 These systems have historically resulted in excluding certain people,
-often due to people having names that systems do not recognize.
-
-A system that relies on a central authority is unlikely to replicate the same failures.
-New risks of exclusion arise:
-
-* Sites that only recognize credentials from local authorities
-  could unjustly exclude people from out of town,
-  either temporarily or permanently.
-* People might temporarily lose access to credentials
-  because of a lost personal device
-  or temporary disability.
-* People might be completely unable to obtain or use credentials.
-* Systems that include the ability to revoke credentials
-  can be abused by attackers
-  to forcibly exclude people.
-
-In some cases,
+often due to people having names that systems do not recognize.</p>
+<p>A system that relies on a central authority is unlikely to replicate the same failures.
+New risks of exclusion arise:</p>
+<ul>
+<li>Sites that only recognize credentials from local authorities
+could unjustly exclude people from out of town,
+either temporarily or permanently.</li>
+<li>People might temporarily lose access to credentials
+because of a lost personal device
+or temporary disability.</li>
+<li>People might be completely unable to obtain or use credentials.</li>
+<li>Systems that include the ability to revoke credentials
+can be abused by attackers
+to forcibly exclude people.</li>
+</ul>
+<p>In some cases,
 such as Aadhaar,
 the law recognizes the risk that people might not be able to produce evidence
-that they hold a credential.
-Better laws recognize this risk
-and require that people not be refused service as a result.
-
-Even if laws only permit the use of digital credentials as a convenience,
+that they hold a credential
+and forbids discrimination against those who do not authenticate.</p>
+<p>Even if laws only permit the use of digital credentials as a convenience,
 there is a risk that no alternative means of access to services are provided.
-This leads to exclusion.
-
-It should not be possible to refuse service to a person
+This leads to exclusion.</p>
+<p>It should not be possible to refuse service to a person
 based on their refusal or inability to make use of digital credentials.
 This is aligned with such principles
-as [not revealing when assistive technologies are in use](https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech)
-or [non-retaliation](https://www.w3.org/TR/privacy-principles/#non-retaliation).
-
-Any credential system therefore needs to carefully consider
+as <a href="https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech">not revealing when assistive technologies are in use</a>
+or <a href="https://www.w3.org/TR/privacy-principles/#non-retaliation">non-retaliation</a>.</p>
+<p>Any credential system therefore needs to carefully consider
 what might happen if someone is unable to authenticate or they refuse to.
 This might include things like non-trivial induced failure rates,
 which could ensure that sites do not come to assume
-that all users are equally able to produce a credential.
-
-## Use Cases and Technical Options
-
-A better understanding of why sites seek to obtain and use identity is necessary.
+that all users are equally able to produce a credential.</p>
+</section><section id="use-cases-and-technical-options"><div class="header-wrapper"><h2 id="x7-use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</h2><a class="self-link" href="#use-cases-and-technical-options" aria-label="Permalink for Section 7."></a></div>
+<p>A better understanding of why sites seek to obtain and use identity is necessary.
 While the universality of a generic solution is appealing,
-each use case could depend on providing different sorts of information.
-
-[... need to have more on use cases in here ...]
-
-Each use case might require a different type of solution.
-Different solutions can have dramatically different privacy characteristics.
-
-For example,
-a [data minimization](https://w3ctag.github.io/privacy-principles/#data-minimization) approach might favor the use of selective disclosure,
+each use case could depend on providing different sorts of information.</p>
+<p>[... need to have more on use cases in here ...]</p>
+<p>Each use case might require a different type of solution.
+Different solutions can have dramatically different privacy characteristics.</p>
+<p>For example,
+a <a href="https://w3ctag.github.io/privacy-principles/#data-minimization">data minimization</a> approach might favor the use of selective disclosure,
 so that people can choose what to disclose,
-either accepting the [linkability risks](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt-17#name-unlinkability)
-or regarding those as critical to ensuring that bad actors can be traced if necessary.
-
-In contrast, a system that seeks to authorize based on certain traits--
+either accepting the <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt-17#name-unlinkability">linkability risks</a>
+or regarding those as critical to ensuring that bad actors can be traced if necessary.</p>
+<p>In contrast, a system that seeks to authorize based on certain traits —
 such as a system to authorize access to online gambling,
-something that might be restricted by age or past history of susceptibility--
+something that might be restricted by age or past history of susceptibility —
 might be best suited to a zero-knowledge system
-that provides strong unlinkability.
-
-## Identity For Whom
-
-Despite considerable investment
+that provides strong unlinkability.</p>
+</section><section id="identity-for-whom"><div class="header-wrapper"><h2 id="x8-identity-for-whom"><bdi class="secno">8. </bdi>Identity For Whom</h2><a class="self-link" href="#identity-for-whom" aria-label="Permalink for Section 8."></a></div>
+<p>Despite considerable investment
 in both technical and legal privacy protections,
 sites gather more information about people than they have previously.
 The use of government-issued identity on the web
 could make that situation worse
-if sites are able to insist that people present proof of identity.
-
-Normalizing the practice of providing identity credentials to websites
+if sites are able to insist that people present proof of identity.</p>
+<p>Normalizing the practice of providing identity credentials to websites
 risks serious harm.
-Providing any form of external identity information needs to be an exceptional process.
-
-For example, it is entirely inappropriate to use government-issued credentials
+Providing any form of external identity information needs to be an exceptional process.</p>
+<p>For example, it is entirely inappropriate to use government-issued credentials
 as a login credential,
-even if credentials are used during account creation.
-
-European [identity legislation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation)
+even if credentials are used during account creation.</p>
+<p>European <a href="https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation">identity legislation</a>
 describes a system that has some potential to counteract
 the worst kinds of abuses that come from overuse of identity credentials.
 Entities that request EU digital identity
@@ -350,17 +443,336 @@ That authorization will be linked a public record
 that includes what information each entity can request
 and how they intend to use it.
 Implemented correctly,
-such a system could bring transparency and accountability.
-
-These systems carry risks,
+such a system could bring transparency and accountability.</p>
+<p>These systems carry risks,
 as demonstrated by experience with Aadhaar.
-A system that was designed for use by government--
-where non-governmental use was deemed an unconstitutional imposition on privacy--
+A system that was designed for use by government —
+where non-governmental use was deemed an unconstitutional imposition on privacy —
 is now open to use by private actors.
 Even before that,
-[Aadhaar was widely used to disempower Indian citizens](https://www.researchgate.net/publication/345088314_Digital_identity_datafication_and_social_justice_understanding_Aadhaar_use_among_informal_workers_in_south_India).
-These kinds of harms directly counteract some of the benefits that the system provides,
+<a href="https://www.researchgate.net/publication/345088314_Digital_identity_datafication_and_social_justice_understanding_Aadhaar_use_among_informal_workers_in_south_India">there were documented cases of Aadhaar being used to disempower Indian citizens</a>.
+These systems can provide substantial benefits,
 in terms of improved access to government services, banking, healthcare and other critical services.
+However, the resulting harms are not trivially justified by those benefits.</p>
+</section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-highlight-vars">(() => {
+// @ts-check
 
-  </body>
-</html>
+if (document.respec) {
+  document.respec.ready.then(setupVarHighlighter);
+} else {
+  setupVarHighlighter();
+}
+
+function setupVarHighlighter() {
+  document
+    .querySelectorAll("var")
+    .forEach(varElem => varElem.addEventListener("click", highlightListener));
+}
+
+function highlightListener(ev) {
+  ev.stopPropagation();
+  const { target: varElem } = ev;
+  const hightligtedElems = highlightVars(varElem);
+  const resetListener = () => {
+    const hlColor = getHighlightColor(varElem);
+    hightligtedElems.forEach(el => removeHighlight(el, hlColor));
+    [...HL_COLORS.keys()].forEach(key => HL_COLORS.set(key, true));
+  };
+  if (hightligtedElems.length) {
+    document.body.addEventListener("click", resetListener, { once: true });
+  }
+}
+
+// availability of highlight colors. colors from var.css
+const HL_COLORS = new Map([
+  ["respec-hl-c1", true],
+  ["respec-hl-c2", true],
+  ["respec-hl-c3", true],
+  ["respec-hl-c4", true],
+  ["respec-hl-c5", true],
+  ["respec-hl-c6", true],
+  ["respec-hl-c7", true],
+]);
+
+function getHighlightColor(target) {
+  // return current colors if applicable
+  const { value } = target.classList;
+  const re = /respec-hl-\w+/;
+  const activeClass = re.test(value) && value.match(re);
+  if (activeClass) return activeClass[0];
+
+  // first color preference
+  if (HL_COLORS.get("respec-hl-c1") === true) return "respec-hl-c1";
+
+  // otherwise get some other available color
+  return [...HL_COLORS.keys()].find(c => HL_COLORS.get(c)) || "respec-hl-c1";
+}
+
+function highlightVars(varElem) {
+  const textContent = norm(varElem.textContent);
+  const parent = varElem.closest(".algorithm, section");
+  const highlightColor = getHighlightColor(varElem);
+
+  const varsToHighlight = [...parent.querySelectorAll("var")].filter(
+    el =>
+      norm(el.textContent) === textContent &&
+      el.closest(".algorithm, section") === parent
+  );
+
+  // update availability of highlight color
+  const colorStatus = varsToHighlight[0].classList.contains("respec-hl");
+  HL_COLORS.set(highlightColor, colorStatus);
+
+  // highlight vars
+  if (colorStatus) {
+    varsToHighlight.forEach(el => removeHighlight(el, highlightColor));
+    return [];
+  } else {
+    varsToHighlight.forEach(el => addHighlight(el, highlightColor));
+  }
+  return varsToHighlight;
+}
+
+function removeHighlight(el, highlightColor) {
+  el.classList.remove("respec-hl", highlightColor);
+  // clean up empty class attributes so they don't come in export
+  if (!el.classList.length) el.removeAttribute("class");
+}
+
+function addHighlight(elem, highlightColor) {
+  elem.classList.add("respec-hl", highlightColor);
+}
+
+/**
+ * Same as `norm` from src/core/utils, but our build process doesn't allow
+ * imports in runtime scripts, so duplicated here.
+ * @param {string} str
+ */
+function norm(str) {
+  return str.trim().replace(/\s+/g, " ");
+}
+})()</script><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
