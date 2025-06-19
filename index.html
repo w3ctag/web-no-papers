@@ -123,15 +123,15 @@ Motivations include:
 This list is far from exhaustive.
 Often, there are multiple reasons that a site seeks to identify a visitor.
 
-Once someone has provided an identifier,
-sites are technically able to use identifiers in any way they choose.
+Once someone has provided an their identity document,
+sites are technically able to use information from such documents in any way they choose.
 Technical privacy protections that might be implemented in a browser cannot help.
 Legal protections might apply to misuse of identifying information,
 but that depends on effective detection and enforcement.
 
-Perhaps the most serious consequence of obtaining an identifier
+Perhaps the most serious consequence of obtaining an credential document
 is that sites are then able to trade information
-across any site where a person has provided that same identifier.
+across any site where a person has provided that same credential document.
 This enables tracking,
 a form of surveillance,
 where people their activities across multiple contexts,
@@ -197,7 +197,7 @@ choose to take advantage of reduced friction to make a request.
 The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
 envisions not only the issuance of digital credentials to individuals,
 but also the explicit authorization of businesses and service providers that will request those credentials.
-These relying parties must be registered and approved,
+These so called "relying parties" must be registered and approved by identity issuers,
 before they are granted permission to request only specific types of information.
 This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
 and that their ability to do so is constrained, transparent, and subject to oversight.
@@ -250,6 +250,7 @@ Centralisation of trust can lead to a fragmented web, where access depends on wh
 a site or user is willing, or able, to work with.
 
 This risks excluding marginalized people.
+
 For example, a visitor, migrant, or refugee may not be able to, or may not feel safe to, use credentials
 from their country of origin.
 Especially where major platforms only recognize a narrow set of issuers,
@@ -289,7 +290,7 @@ there is a risk that no alternative means of access to services are provided.
 This leads to exclusion.
 
 It should not be possible to refuse service to a person
-based on their refusal or inability to make use of digital credentials.
+based on their refusal or inability to hand over a digital credentials.
 This is aligned with such principles
 as [not revealing when assistive technologies are in use](https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech)
 or [non-retaliation](https://www.w3.org/TR/privacy-principles/#non-retaliation).
@@ -328,7 +329,7 @@ that provides strong unlinkability.
 Despite considerable investment
 in both technical and legal privacy protections,
 sites gather more information about people than they have previously.
-The use of government-issued identity on the web
+The use of government-issued identity documents on the web
 could make that situation worse
 if sites are able to insist that people present proof of identity.
 
