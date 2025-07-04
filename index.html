@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en" dir="ltr"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 35.4.0">
+<meta name="generator" content="ReSpec 35.4.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -122,20 +122,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "publisher": "W3C"
     }
   },
-  "publishISODate": "2025-05-29T00:00:00.000Z",
-  "generatedSubtitle": "W3C Draft TAG Finding 29 May 2025"
+  "publishISODate": "2025-07-04T00:00:00.000Z",
+  "generatedSubtitle": "W3C Draft TAG Finding 04 July 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head>
 <body class="informative h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Preventing Abuse of Digital Identities</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-05-29">29 May 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-07-04">04 July 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250529/">https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250529/</a>
+                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250704/">https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250704/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/2001/tag/doc/web-no-papers/">https://www.w3.org/2001/tag/doc/web-no-papers/</a>
@@ -185,7 +185,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </section>
 <section id="sotd" class="introductory"><h2>Status of This Document</h2>
 <p>This is a draft TAG finding and does not yet represent TAG consensus.</p>
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#uses-for-identity-information"><bdi class="secno">2. </bdi>Uses for Identity Information</a></li><li class="tocline"><a class="tocxref" href="#tracking-with-identity"><bdi class="secno">3. </bdi>Tracking with Identity</a></li><li class="tocline"><a class="tocxref" href="#overuse-of-identity"><bdi class="secno">4. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorizing-sites"><bdi class="secno">4.1 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#case-study-aadhaar"><bdi class="secno">4.2 </bdi>Case Study: Aadhaar</a></li></ol></li><li class="tocline"><a class="tocxref" href="#centralization-of-trust"><bdi class="secno">5. </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">6. </bdi>Exclusion</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</a></li><li class="tocline"><a class="tocxref" href="#identity-for-whom"><bdi class="secno">8. </bdi>Identity For Whom</a></li></ol></nav>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#uses-for-identity-information"><bdi class="secno">2. </bdi>Uses for Identity Information</a></li><li class="tocline"><a class="tocxref" href="#tracking-with-identity"><bdi class="secno">3. </bdi>Tracking with Identity</a></li><li class="tocline"><a class="tocxref" href="#overuse-of-identity"><bdi class="secno">4. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorizing-sites"><bdi class="secno">4.1 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#case-study-aadhaar"><bdi class="secno">4.2 </bdi>Case Study: Aadhaar</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">4.3 </bdi>Multiple National Credentials</a></li></ol></li><li class="tocline"><a class="tocxref" href="#centralization-of-trust"><bdi class="secno">5. </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">6. </bdi>Exclusion</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</a></li><li class="tocline"><a class="tocxref" href="#identity-for-whom"><bdi class="secno">8. </bdi>Identity For Whom</a></li></ol></nav>
 
 <section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
 <p>APIs that facilitate access to verifiable claims about identity,
@@ -317,7 +317,8 @@ choose to take advantage of reduced friction to make a request.</p>
 <p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
 envisions not only the issuance of digital credentials to individuals,
 but also the explicit authorization of businesses and service providers that will request those credentials.
-These relying parties must be registered and approved,
+These entities (known as "relying parties")
+must be registered and approved by identity issuers,
 before they are granted permission to request only specific types of information.
 This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
 and that their ability to do so is constrained, transparent, and subject to oversight.</p>
@@ -357,11 +358,30 @@ which links fingerprints and iris scans to name and other personal details.</p>
 <p>Despite Aadhar use being optional in law,
 even prior to this change,
 its use was widespread in employment and other non-government interactions.</p>
+</section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x4-3-multiple-national-credentials"><bdi class="secno">4.3 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 4.3"></a></div>
+<p>Individuals with more than one nationality, when traveling across international borders,
+have the choice of which credential (passport) to assert.<br>For example, a person is generally required to present a passport
+for the country they entering if they are a citizen of that country,
+even if they hold other passports.
+When entering a country in which they do not hold citizenship,
+individuals with multiple nationalities have the choice of asserting
+whichever nationality is more convenient 
+(for example, one where they would not have to obtain a visa prior to traveling).
+The systems that support digital passport credentials –
+and therefore enable these assertions to move to the digital domain –
+should not behave any differently.
+Some countries already provide web apps (such as Visit Japan Web) that enable people
+to pre-register their passports by entering passport data manually,
+and national authorities will likely build these web apps
+to take advantage of digital credentials when they become available.
+It's vital that national authorities are not able to query or enumerate what
+credentials may exist and equally important that end users remain in control
+of what information is provided.</p>
 </section></section><section id="centralization-of-trust"><div class="header-wrapper"><h2 id="x5-centralization-of-trust"><bdi class="secno">5. </bdi>Centralization of Trust</h2><a class="self-link" href="#centralization-of-trust" aria-label="Permalink for Section 5."></a></div>
 <p>Centralisation of trust can lead to a fragmented web, where access depends on which authorities
 a site or user is willing, or able, to work with.</p>
-<p>This risks excluding marginalized people.
-For example, a visitor, migrant, or refugee may not be able to, or may not feel safe to, use credentials
+<p>This risks excluding marginalized people.</p>
+<p>For example, a visitor, migrant, or refugee may not be able to, or may not feel safe to, use credentials
 from their country of origin.
 Especially where major platforms only recognize a narrow set of issuers,
 or only recognize issuers tied to a specific jurisdiction.
@@ -395,7 +415,7 @@ and forbids discrimination against those who do not authenticate.</p>
 there is a risk that no alternative means of access to services are provided.
 This leads to exclusion.</p>
 <p>It should not be possible to refuse service to a person
-based on their refusal or inability to make use of digital credentials.
+based on their refusal or inability to provide a digital credential.
 This is aligned with such principles
 as <a href="https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech">not revealing when assistive technologies are in use</a>
 or <a href="https://www.w3.org/TR/privacy-principles/#non-retaliation">non-retaliation</a>.</p>
@@ -425,7 +445,7 @@ that provides strong unlinkability.</p>
 <p>Despite considerable investment
 in both technical and legal privacy protections,
 sites gather more information about people than they have previously.
-The use of government-issued identity on the web
+The use of government-issued identity documents on the web
 could make that situation worse
 if sites are able to insist that people present proof of identity.</p>
 <p>Normalizing the practice of providing identity credentials to websites
