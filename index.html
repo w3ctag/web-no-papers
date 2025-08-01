@@ -121,25 +121,45 @@ to pay special attention to the societal impact of digital credentials.
 
 ## Uses for Identity Information
 
-Before examining the harms,
-it is important to understand why sites seek identity information
-from visitors.
 There are multiple reasons that a site might seek to ask for proof of legal identity.
-Motivations include:
+Often, there are multiple reasons that a site seeks to identify a visitor.
 
-* Legal mandates,
-  such as know-your-customer regulations common to financial services.
-* Distinguishing between visits from real people and visits from bots,
-  which might need to be handled specially.
+Motivations that tend to produce user-beneficial outcomes include:
+
 * Obtaining some means of holding a person accountable
   for a range of abusive behavior.
 * Avoiding impersonation,
   especially for social media accounts of prominent individuals or organizations.
+* Legal mandates,
+  such as know-your-customer regulations common to financial services.
+
+These uses are not necessarily directly felt
+by people who are required to present credentials,
+but they can provide a societal benefit
+that outweighs the costs to individuals.
+Each of these still carries the potential for abuse.
+
+There are also motivations
+for which requesting identification is not justified
+and those that are outright harmful to end user interests:
+
+* Distinguishing between visits from real people and visits from bots,
+  which might need to be handled specially.
 * Personalization,
   such as being able to appear more friendly by greeting a person by their name.
+* Tracking,
+  which takes identity presented to multiple contexts
+  and links that activity to a single person.
 
-This list is far from exhaustive.
-Often, there are multiple reasons that a site seeks to identify a visitor.
+That is, while at least _some_ of these goals are beneficial,
+the use of identity documents is not appropriate.
+Any benefits are not justified by the cost
+that people pay in terms of losing their ability to control
+[the identity they present](https://w3ctag.github.io/privacy-principles/#principle-identity-per-context)
+[[PRIVACY-PRINCIPLES]].
+Other goals are inherently objectionable.
+
+## Tracking with Identity {#tracking}
 
 Once someone has provided an identifier,
 sites are technically able to use identifiers in any way they choose.
@@ -157,8 +177,6 @@ both on- and off-line,
 gathered into profiles.
 These profiles are then used for many purposes
 including advertising, credit ratings, and market analysis.
-
-## Tracking with Identity
 
 For all its benefits,
 one of the most shameful aspects of the web is how it has allowed sites to surveil people.
