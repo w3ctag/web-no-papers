@@ -26,10 +26,16 @@ var respecConfig = {
   github: "w3ctag/web-no-papers",
   format: "markdown",
   localBiblio: {
-    "EWP" : {
-      title: "Preventing Abuse of Digital Legal Identities",
-      href: "https://www.w3.org/2001/tag/doc/web-no-papers/",
+    "OBJECTION": {
+      title: "[/wg/fedid] Formal Objection (charter review)",
+      href: "https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html",
+      date: "2024-09-12",
       publisher: "W3C",
+    },
+    "COUNCIL-REPORT": {
+      title: "W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API",
+      href: "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
+      date: "2025-02-20",
     },
   },
 };
@@ -56,17 +62,20 @@ This is a draft TAG finding and does not yet represent TAG consensus.
 APIs that facilitate access to verifiable claims about identity,
 such as the proposed [Digital Credentials API](https://wicg.github.io/digital-credentials/),
 are starting to be developed and deployed.
-National digital identity systems are being legislated in a large number of jurisdictions.
+A large number of jurisdictions are starting
+to create digital identity systems for their citizens.
 The [Federated Identity Working Group](https://www.w3.org/2025/02/wg-fedid.html)
-includes this API as a chartered deliverable.
+includes an API for accessing these systems
+as a chartered deliverable.
 
-These APIs represent a convenient way to access proof of legal identity,
-backed by large-scale government projects in multiple jurisdictions.
+Digital identity APIs provide a convenient way
+for websites to access proof of legal identity.
 This convenience leads to a range of implications for privacy,
-as noted in a recent [objection](https://www.w3.org/2025/02/council-report-fedid-dig-cred.html)
-to the formation of the Federated Identity Working Group.
+as noted in a recent objection
+to the formation of the Federated Identity Working Group [[OBJECTION]].
 
-A number of serious concerns were raised in this objection:
+The TAG believes that the addition of government-issued digital credentials
+to the web has great potential to cause the harms listed in the objection:
 
 * Increased sharing of personal data
   and corresponding reduction of privacy
@@ -80,11 +89,10 @@ A number of serious concerns were raised in this objection:
   where credentials may be requested or required inappropriately or coercively,
   raising concerns about government or platform overreach.
 
-A [W3C Council](https://www.w3.org/policies/process/#council) (which included members of the TAG)
-found these concerns to be serious and valid.
-Despite this, the working group was allowed to form,
-though [the council report](https://www.w3.org/2025/02/council-report-fedid-dig-cred.html)
-included a recommendation that the group seriously consider these factors as they develop the API.
+The report produced by the W3C Council [[COUNCIL-REPORT]]
+also acknowledged these problems
+and [recommended](https://www.w3.org/2025/02/council-report-fedid-dig-cred.html#x1-recommendations)
+that these concerns be addressed in the work of the Working Group.
 
 ## Finding Summary
 
