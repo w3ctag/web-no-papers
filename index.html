@@ -119,7 +119,7 @@ and always on a person's own terms.
 The TAG therefore encourages contributors
 to pay special attention to the societal impact of digital credentials.
 
-## Uses for Identity Information
+## Uses for Identity Information {#reasons}
 
 There are multiple reasons that a site might seek to ask for proof of legal identity.
 Often, there are multiple reasons that a site seeks to identify a visitor.
@@ -211,34 +211,14 @@ No such flexibility is possible when it comes to legal identity.
 
 A streamlined process for providing verifiable identity
 reduces the cost of requesting and providing that information.
-In turn, this might make sites that would otherwise not ask for information
+In turn, this will make sites that would otherwise not ask for information
 choose to take advantage of reduced friction to make a request.
 
+Though increasing friction might not be worthwhile,
+other mechanisms might be used to disincentivise requests for legal identity.
+A method that might alter the costs for site operators
+is described [below](#auth).
 
-### Authorizing Sites
-
-The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
-envisions not only the issuance of digital credentials to individuals,
-but also the explicit authorization of businesses and service providers that will request those credentials.
-These entities (known as "relying parties")
-must be registered and approved by identity issuers,
-before they are granted permission to request only specific types of information.
-This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
-and that their ability to do so is constrained, transparent, and subject to oversight.
-
-This depends on having a system for transparency:
-
-> relying parties should provide information regarding the data that they will request,
-> if any, in order to provide their services and the reason for the request.
-
-Transparency contributes to accountability by making it possible for users to understand who is asking for what,
-and under what legal authority.
-This safeguard mitigates against some of the risks associated with digital credentials.
-However, it does not eliminate the need for scrutiny,
-particularly with regard to proportionality of use,
-user control, and the risk of such mechanisms becoming normalized across the web.
-Nevertheless, we recommend that the specification authors look to such mechanisms as a guide for mitigating
-potential harms in this area.
 
 ### Case Study: Aadhaar
 
@@ -256,7 +236,7 @@ was ruled [unconstitutional](https://www.thehindu.com/news/resources/article2504
 by the Supreme Court in 2018.
 
 In 2025,
-the Indian government has enabled wide use of Aadhar for any entitiy,
+the Indian government has enabled wide use of Aadhar for any entity,
 expanding the set of recognized reasons
 to include "[promoting ease of living for residents](https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2098223)".
 As a result,
@@ -266,29 +246,13 @@ which links fingerprints and iris scans to name and other personal details.
 
 Despite Aadhar use being optional in law,
 even prior to this change,
-its use was widespread in employment and other non-government interactions.
+refusals to do business were widespread in employment
+and other non-government interactions.
+This further highlights the need for accountability,
+but also demonstrates that there are strong incentives
+that motivate the use of legal identity where it is available.
+Privacy therefore depends on having an equivalently strong countervailing force.
 
-### Multiple National Credentials
-
-Individuals with more than one nationality, when traveling across international borders,
-have the choice of which credential (passport) to assert.
-For example, a person is generally required to present a passport
-for the country they entering if they are a citizen of that country,
-even if they hold other passports.
-When entering a country in which they do not hold citizenship,
-individuals with multiple nationalities have the choice of asserting
-whichever nationality is more convenient
-(for example, one where they would not have to obtain a visa prior to traveling).
-The systems that support digital passport credentials –
-and therefore enable these assertions to move to the digital domain –
-should not behave any differently.
-Some countries already provide web apps (such as Visit Japan Web) that enable people
-to pre-register their passports by entering passport data manually,
-and national authorities will likely build these web apps
-to take advantage of digital credentials when they become available.
-It's vital that national authorities are not able to query or enumerate what
-credentials may exist and equally important that end users remain in control
-of what information is provided.
 
 ## Centralization of Trust
 
@@ -347,13 +311,13 @@ This might include things like non-trivial induced failure rates,
 which could ensure that sites do not come to assume
 that all users are equally able to produce a credential.
 
+
 ## Use Cases and Technical Options
 
 A better understanding of why sites seek to obtain and use identity is necessary.
 While the universality of a generic solution is appealing,
-each use case could depend on providing different sorts of information.
-
-[... need to have more on use cases in here ...]
+each use case could depend on providing different sorts of information,
+as discussed [above](#reasons).
 
 Each use case might require a different type of solution.
 Different solutions can have dramatically different privacy characteristics.
@@ -369,6 +333,54 @@ such as a system to authorize access to online gambling,
 something that might be restricted by age or past history of susceptibility &mdash;
 might be best suited to a zero-knowledge system
 that provides strong unlinkability.
+
+
+### Authorizing Sites {#auth}
+
+The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
+envisions not only the issuance of digital credentials to individuals,
+but also the explicit authorization of businesses and service providers that will request those credentials.
+These entities (known as "relying parties")
+must be registered and approved by identity issuers,
+before they are granted permission to access the system.
+Relying parties can then request only the information they received approval for.
+This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
+and that their ability to do so is constrained, transparent, and subject to oversight.
+
+This depends on having a system for transparency:
+
+> relying parties should provide information regarding the data that they will request,
+> if any, in order to provide their services and the reason for the request.
+
+Transparency contributes to accountability
+by making it possible for users to understand who is asking for what,
+and under what legal authority.
+This safeguard mitigates against some of the risks associated with digital credentials.
+However, it does not eliminate the need for scrutiny,
+particularly with regard to proportionality of use,
+user control, and the risk of such mechanisms becoming normalized across the web.
+Nevertheless, we recommend that the specification authors look to such mechanisms as a guide for mitigating
+potential harms in this area.
+
+
+### Multiple National Credentials
+
+Individuals with more than one nationality, when traveling across international borders,
+have the choice of which credential (passport) to assert.
+For example, a person is generally required to present a passport
+for the country they entering if they are a citizen of that country,
+even if they hold other passports.
+When entering a country in which they do not hold citizenship,
+individuals with multiple nationalities have the choice of asserting
+whichever nationality is more convenient.
+
+The systems that support digital passport credentials &mdash;
+and therefore enable these assertions to move to the digital domain &mdash;
+should not behave any differently.
+It's vital that national authorities are not able to query or enumerate what
+credentials may exist and equally important that end users remain in control
+of what information is provided.
+
 
 ## Identity For Whom
 
