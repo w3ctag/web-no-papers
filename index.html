@@ -220,13 +220,14 @@ A method that might alter the costs for site operators
 is described [below](#auth).
 
 
-### Case Study: Aadhaar
+### Case Study: Aadhaar {#aadhaar}
 
 That digital credentials might be used to track people is not a fancy of science fiction,
 it is the lived experience of a very large number of people.
 
 In India,
-the Aadhaar national identity scheme was introduced as a way to enable access to government services,
+the [Aadhaar](https://uidai.gov.in/) national identity scheme
+was introduced as a way to enable access to government services,
 like health, welfare, and food assistance.
 Though the legislation
 originally included the option for Aadhaar to be used by non-government actors,
@@ -254,33 +255,23 @@ that motivate the use of legal identity where it is available.
 Privacy therefore depends on having an equivalently strong countervailing force.
 
 
-## Centralization of Trust
-
-Centralisation of trust can lead to a fragmented web, where access depends on which authorities
-a site or user is willing, or able, to work with.
-
-This risks excluding marginalized people.
-
-For example, a visitor, migrant, or refugee may not be able to, or may not feel safe to, use credentials
-from their country of origin.
-Especially where major platforms only recognize a narrow set of issuers,
-or only recognize issuers tied to a specific jurisdiction.
-The choice of jurisdiction is not often something that a user can choose,
-but instead one dictated by factors outside of their control.
-This could undermine the global and open nature of the web.
-
 ## Exclusion
 
-Online services that have [real-name policies](https://en.wikipedia.org/wiki/Real-name_system) are justifiably controversial.
-These systems have historically resulted in excluding certain people,
-often due to people having names that systems do not recognize.
+Online services that have [real-name policies](https://en.wikipedia.org/wiki/Real-name_system)
+are justifiably controversial.
+The use of legal identity provides very different social dynamics
+when compared with [pseudonymous](https://www.eff.org/deeplinks/2011/07/case-pseudonyms)
+or anonymous systems.
 
-A system that relies on a central authority is unlikely to replicate the same failures.
-New risks of exclusion arise:
+Insistence on use of legal identity inevitably excludes certain people,
+which can be for a range of reasons:
 
 * Sites that only recognize credentials from local authorities
   could unjustly exclude people from out of town,
   either temporarily or permanently.
+* People might wish to remain anonymous
+  for any reason,
+  including fear of harm to their reputation or person.
 * People might temporarily lose access to credentials
   because of a lost personal device
   or temporary disability.
@@ -290,10 +281,11 @@ New risks of exclusion arise:
   to forcibly exclude people.
 
 In some cases,
-such as Aadhaar,
+such as [Aadhaar](#aadhaar),
 the law recognizes the risk that people might not be able to produce evidence
 that they hold a credential
 and forbids discrimination against those who do not authenticate.
+However, what matters is whether refusal is respected in practice.
 
 Even if laws only permit the use of digital credentials as a convenience,
 there is a risk that no alternative means of access to services are provided.
@@ -305,11 +297,61 @@ This is aligned with such principles
 as [not revealing when assistive technologies are in use](https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech)
 or [non-retaliation](https://www.w3.org/TR/privacy-principles/#non-retaliation).
 
-Any credential system therefore needs to carefully consider
-what might happen if someone is unable to authenticate or they refuse to.
-This might include things like non-trivial induced failure rates,
-which could ensure that sites do not come to assume
-that all users are equally able to produce a credential.
+
+### Centralization of Trust
+
+Any website that requests legal identifiers
+needs to decide which legal identities it accepts.
+The easiest way to do this is to trust the issuers of credentials
+that are most-used among visitors
+and distrust the rest.
+Another way might be to choose government-issued credentials
+from jurisdictions in which the site has a legal presence.
+This risks centralization of trust in the most-used credentials
+and makes it hard for any new authority to become trusted.
+
+This centralization can lead to a fragmented web,
+where access depends on which authorities
+a site or user is willing, or able, to work with.
+
+This also risks marginalizing people
+who are unable to obtain accepted credentials
+for any reason.
+The choice of jurisdiction is not often something that a user can choose,
+but instead one dictated by factors outside of their control.
+This could undermine the global and open nature of the web.
+
+For example, a visitor, migrant, or refugee
+may not be able to, or may not feel safe to, use credentials
+from their country of origin.
+Especially where major platforms only recognize a narrow set of issuers,
+or only recognize issuers tied to a specific jurisdiction.
+
+
+### Centralization of Control
+
+The implementation of identity verification is complex.
+Sites might choose to delegate to external services to manage the process.
+
+It is possible that a limited number of service providers
+will be capable of implementing the technical and legal process
+of gathering and validating credentials.
+This is presently the case for payments infrastructure,
+which has high degrees of consolidation.
+
+Centralized control provides opportunities to use &mdash;
+or, depending on perspective, abuse &mdash;
+the power it confers to advance political goals.
+For instance, centralized control over access to payments infrastructure
+has been used to [refuse business](https://stripe.com/au/legal/restricted-businesses#prohibited-businesses)
+from [sex work](https://www.aclu.org/news/lgbtq-rights/how-mastercard-is-endangering-sex-workers),
+[legal drugs](https://thejointllc.com/cash-only-cannabis/),
+and [video games](https://pressspacetojump.com/feature/on-itch-io-payment-processors-and-the-developers-and-creatives-affected/).
+
+Open standards and implementations can help
+reduce this risk of capture.
+Designing systems and standards to minimize any structural bias
+that might lead to market consolidation is better.
 
 
 ## Use Cases and Technical Options
@@ -380,6 +422,24 @@ should not behave any differently.
 It's vital that national authorities are not able to query or enumerate what
 credentials may exist and equally important that end users remain in control
 of what information is provided.
+
+
+### Avoiding Dependence
+
+Any credential system needs to carefully consider
+what might happen if someone is unable to authenticate or they refuse to.
+
+A protection that might protect people who cannot provide a credential,
+for [any reason](#exclusion),
+might be to artificially induce a non-trivial failure rate
+even where credentials are available and valid.
+This might ensure that sites do not come to assume
+that all users are equally able to produce a credential
+and so build systems to handle failures.
+
+Any choice to induce such failures needs to be balanced
+against the potential for fallback mechanisms
+to be considerably less private.
 
 
 ## Identity For Whom
