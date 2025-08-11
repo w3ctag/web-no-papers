@@ -24,9 +24,19 @@ dfn{cursor:pointer}
 </style>
     
     
-<title>Preventing Abuse of Digital Identities</title>
+<title>Preventing Abuse of Digital Credentials</title>
     
     
+
+<style>
+
+#toc a.tocxref[href="#references"] + ol.toc,
+#informative-references > .header-wrapper
+{
+  display: none;
+}
+
+</style>
 
 <style id="respec-mainstyle">
 @keyframes pop{
@@ -73,7 +83,14 @@ dd{margin-left:0}
 }
 </style>
 <meta name="color-scheme" content="light">
-<meta name="description" content="Abstract to come.">
+<meta name="description" content="The use of digital identity for web users
+presents many opportunities for abuse.
+This risk is heightened
+when legal names or identities are involved.
+This document explores some of these risks,
+with a focus on the presentation of government-issued digital credentials.
+Misuse of these systems risks
+doing irreparable harm to individual autonomy online.">
 <link rel="canonical" href="https://www.w3.org/2001/tag/doc/web-no-papers/">
 <style>
 var:hover{text-decoration:underline;cursor:pointer}
@@ -116,26 +133,34 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "github": "w3ctag/web-no-papers",
   "format": "markdown",
   "localBiblio": {
-    "EWP": {
-      "title": "Preventing Abuse of Digital Identities",
-      "href": "https://www.w3.org/2001/tag/doc/web-no-papers/",
-      "publisher": "W3C"
+    "OBJECTION": {
+      "title": "[/wg/fedid] Formal Objection (charter review)",
+      "href": "https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html",
+      "date": "2024-09-12",
+      "publisher": "W3C",
+      "id": "objection"
+    },
+    "COUNCIL-REPORT": {
+      "title": "W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API",
+      "href": "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
+      "date": "2025-02-20",
+      "id": "council-report"
     }
   },
-  "publishISODate": "2025-07-24T00:00:00.000Z",
-  "generatedSubtitle": "W3C Draft TAG Finding 24 July 2025"
+  "publishISODate": "2025-08-11T00:00:00.000Z",
+  "generatedSubtitle": "W3C Draft TAG Finding 11 August 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head>
 <body class="informative h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
-    <h1 id="title" class="title">Preventing Abuse of Digital Identities</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-07-24">24 July 2025</time></p>
+    <h1 id="title" class="title">Preventing Abuse of Digital Credentials</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-08-11">11 August 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250724/">https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250724/</a>
+                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250811/">https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250811/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/2001/tag/doc/web-no-papers/">https://www.w3.org/2001/tag/doc/web-no-papers/</a>
@@ -181,25 +206,40 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </p>
     <hr title="Separator for header">
   </div><section id="abstract" class="introductory"><h2>Abstract</h2>
-<p>Abstract to come.</p>
-</section>
-<section id="sotd" class="introductory"><h2>Status of This Document</h2>
-<p>This is a draft TAG finding and does not yet represent TAG consensus.</p>
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#uses-for-identity-information"><bdi class="secno">2. </bdi>Uses for Identity Information</a></li><li class="tocline"><a class="tocxref" href="#tracking-with-identity"><bdi class="secno">3. </bdi>Tracking with Identity</a></li><li class="tocline"><a class="tocxref" href="#overuse-of-identity"><bdi class="secno">4. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#authorizing-sites"><bdi class="secno">4.1 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#case-study-aadhaar"><bdi class="secno">4.2 </bdi>Case Study: Aadhaar</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">4.3 </bdi>Multiple National Credentials</a></li></ol></li><li class="tocline"><a class="tocxref" href="#centralization-of-trust"><bdi class="secno">5. </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">6. </bdi>Exclusion</a></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</a></li><li class="tocline"><a class="tocxref" href="#identity-for-whom"><bdi class="secno">8. </bdi>Identity For Whom</a></li><li class="tocline"><a class="tocxref" href="#conclusion"><bdi class="secno">9. </bdi>Conclusion</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
-<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
+
+<p>The use of digital identity for web users
+presents many opportunities for abuse.
+This risk is heightened
+when legal names or identities are involved.
+This document explores some of these risks,
+with a focus on the presentation of government-issued digital credentials.
+Misuse of these systems risks
+doing irreparable harm to individual autonomy online.</p>
+</section>
+
+<section id="sotd" class="introductory"><h2>Status of This Document</h2>
+
+
+<p>This is a draft TAG finding and does not yet represent TAG consensus.</p>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1. </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#finding-summary"><bdi class="secno">2. </bdi>Finding Summary</a></li><li class="tocline"><a class="tocxref" href="#reasons"><bdi class="secno">3. </bdi>Uses for Identity Information</a></li><li class="tocline"><a class="tocxref" href="#tracking"><bdi class="secno">4. </bdi>Tracking with Legal Identity</a></li><li class="tocline"><a class="tocxref" href="#overuse-of-identity"><bdi class="secno">5. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aadhaar"><bdi class="secno">5.1 </bdi>Case Study: Aadhaar</a></li></ol></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">6. </bdi>Exclusion</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#centralization-of-trust"><bdi class="secno">6.1 </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#centralization-of-control"><bdi class="secno">6.2 </bdi>Centralization of Control</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#auth"><bdi class="secno">7.1 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">7.2 </bdi>Multiple National Credentials</a></li><li class="tocline"><a class="tocxref" href="#avoiding-dependence"><bdi class="secno">7.3 </bdi>Avoiding Dependence</a></li></ol></li><li class="tocline"><a class="tocxref" href="#call-to-action"><bdi class="secno">8. </bdi>Call to Action</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+
+<section id="background"><div class="header-wrapper"><h2 id="x1-background"><bdi class="secno">1. </bdi>Background</h2><a class="self-link" href="#background" aria-label="Permalink for Section 1."></a></div>
 <p>APIs that facilitate access to verifiable claims about identity,
 such as the proposed <a href="https://wicg.github.io/digital-credentials/">Digital Credentials API</a>,
 are starting to be developed and deployed.
-National digital identity systems are being legislated in a large number of jurisdictions.
+A large number of jurisdictions are starting
+to create digital identity systems for their citizens.
 The <a href="https://www.w3.org/2025/02/wg-fedid.html">Federated Identity Working Group</a>
-includes this API as a chartered deliverable.</p>
-<p>These APIs represent a convenient way to access proof of legal identity,
-backed by large-scale government projects in multiple jurisdictions.
+includes an API for accessing these systems
+as a chartered deliverable.</p>
+<p>Digital identity APIs provide a convenient way
+for websites to access proof of legal identity.
 This convenience leads to a range of implications for privacy,
-as noted in a recent <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html">objection</a>
-to the formation of the Federated Identity Working Group.</p>
-<p>A number of serious concerns were raised in this objection:</p>
+as noted in a recent objection
+to the formation of the Federated Identity Working Group [<cite><a class="bibref" data-link-type="biblio" href="#bib-objection" title="[/wg/fedid] Formal Objection (charter review)">OBJECTION</a></cite>].</p>
+<p>The TAG believes that the addition of government-issued digital credentials
+to the web has great potential to cause the harms listed in the objection:</p>
 <ul>
 <li>Increased sharing of personal data
 and corresponding reduction of privacy
@@ -213,11 +253,11 @@ and corresponding fragmentation of the Web as a whole.</li>
 where credentials may be requested or required inappropriately or coercively,
 raising concerns about government or platform overreach.</li>
 </ul>
-<p>A <a href="https://www.w3.org/policies/process/#council"><abbr title="World Wide Web Consortium">W3C</abbr> Council</a> (which included members of the TAG)
-found these concerns to be serious and valid.
-Despite this, the working group was allowed to form,
-though <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html">the council report</a>
-included a recommendation that the group seriously consider these factors as they develop the API.</p>
+<p>The report produced by the <abbr title="World Wide Web Consortium">W3C</abbr> Council [<cite><a class="bibref" data-link-type="biblio" href="#bib-council-report" title="W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API">COUNCIL-REPORT</a></cite>]
+also acknowledged these problems
+and <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html#x1-recommendations">recommended</a>
+that these concerns be addressed in the work of the Working Group.</p>
+</section><section id="finding-summary"><div class="header-wrapper"><h2 id="x2-finding-summary"><bdi class="secno">2. </bdi>Finding Summary</h2><a class="self-link" href="#finding-summary" aria-label="Permalink for Section 2."></a></div>
 <p>The TAG believes that the addition of government-issued digital credentials to the web
 has great potential for harm.</p>
 <p>The benefits of digital credentials
@@ -230,116 +270,107 @@ or user agent —
 plays an essential role
 in mediating these types of requests
 and ensuring that people have agency.</p>
-<p>The web should not become a platform that demands your government-issued identity documents,
+<p>The web should not become a platform that demands your government-issued identity documents
 in the course of its normal operation.
 Use of such credentials should be exceptional,
 only when required,
 and always on a person's own terms.</p>
 <p>The TAG therefore encourages contributors
 to pay special attention to the societal impact of digital credentials.</p>
-</section><section id="uses-for-identity-information"><div class="header-wrapper"><h2 id="x2-uses-for-identity-information"><bdi class="secno">2. </bdi>Uses for Identity Information</h2><a class="self-link" href="#uses-for-identity-information" aria-label="Permalink for Section 2."></a></div>
-<p>Before examining the harms,
-it is important to understand why sites seek identity information
-from visitors.
-There are multiple reasons that a site might seek to ask for proof of legal identity.
-Motivations include:</p>
+</section><section id="uses-for-identity-information"><div class="header-wrapper"><h2 id="reasons"><bdi class="secno">3. </bdi>Uses for Identity Information</h2><a class="self-link" href="#reasons" aria-label="Permalink for Section 3."></a></div><p>There are multiple reasons that a site might seek to ask for proof of legal identity.
+Often, there are multiple reasons that a site seeks to identify a visitor.</p>
+<p>Motivations that tend to produce user-beneficial outcomes include:</p>
 <ul>
-<li>Legal mandates,
-such as know-your-customer regulations common to financial services.</li>
-<li>Distinguishing between visits from real people and visits from bots,
-which might need to be handled specially.</li>
 <li>Obtaining some means of holding a person accountable
 for a range of abusive behavior.</li>
 <li>Avoiding impersonation,
 especially for social media accounts of prominent individuals or organizations.</li>
+<li>Legal mandates,
+such as know-your-customer regulations common to financial services.</li>
+</ul>
+<p>These uses are not necessarily directly felt
+by people who are required to present credentials,
+but they can provide a societal benefit
+that outweighs the costs to individuals.
+Each of these still carries the potential for abuse.</p>
+<p>There are also motivations
+for which requesting identification is not justified
+and those that are outright harmful to end user interests:</p>
+<ul>
+<li>Distinguishing between visits from real people and visits from bots,
+which might need to be handled specially.</li>
 <li>Personalization,
 such as being able to appear more friendly by greeting a person by their name.</li>
+<li>Tracking,
+which takes identity presented to multiple contexts
+and links that activity to a single person.</li>
 </ul>
-<p>This list is far from exhaustive.
-Often, there are multiple reasons that a site seeks to identify a visitor.</p>
-<p>Once someone has provided an identifier,
+<p>That is, while at least <em>some</em> of these goals are beneficial,
+the use of identity documents is not appropriate.
+Any benefits are not justified by the cost
+that people pay in terms of losing their ability to control
+<a href="https://w3ctag.github.io/privacy-principles/#principle-identity-per-context">the identity they present</a>
+[<cite><a class="bibref" data-link-type="biblio" href="#bib-privacy-principles" title="Privacy Principles">PRIVACY-PRINCIPLES</a></cite>].
+Other goals are inherently objectionable.</p>
+</section><section id="tracking-with-legal-identity"><div class="header-wrapper"><h2 id="tracking"><bdi class="secno">4. </bdi>Tracking with Legal Identity</h2><a class="self-link" href="#tracking" aria-label="Permalink for Section 4."></a></div><p>Once someone has provided legal identity,
 sites are technically able to use identifiers in any way they choose.
 Technical privacy protections that might be implemented in a browser cannot help.
 Legal protections might apply to misuse of identifying information,
 but that depends on effective detection and enforcement.</p>
+<p>Tracking practices are moving away from largely hidden mechanisms —
+like cookies —
+to systems that require the use of stable identifiers.
+Once identifying information is provided,
+sites might then assume that they have consent to use identifiers
+for a range of purposes.
+Of course, without a viable alternative,
+any consent to use identifiers is a fiction.</p>
 <p>Perhaps the most serious consequence of obtaining an identifier
 is that sites are then able to trade information
-across any site where a person has provided that same identifier.
-This enables tracking,
-a form of surveillance,
-where people their activities across multiple contexts,
-both on- and off-line,
-gathered into profiles.
-These profiles are then used for many purposes
+across any contexts where a person has provided that same identifier,
+online or offline.
+The resulting profiles are then used for many purposes
 including advertising, credit ratings, and market analysis.</p>
-</section><section id="tracking-with-identity"><div class="header-wrapper"><h2 id="x3-tracking-with-identity"><bdi class="secno">3. </bdi>Tracking with Identity</h2><a class="self-link" href="#tracking-with-identity" aria-label="Permalink for Section 3."></a></div>
-<p>For all its benefits,
-one of the most shameful aspects of the web is how it has allowed sites to surveil people.
-Sites take what they learn about the people that visit them
-and treat that information as a commodity to be sold or exchanged.</p>
-<p>The TAG has long regarded <a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/">unsanctioned tracking as unacceptable</a>
+<p>The TAG regards <a href="https://www.w3.org/2001/tag/doc/unsanctioned-tracking/">unsanctioned tracking as unacceptable</a>
 and has advocated for technical measures that curtail these practices.
-Notably, <a href="https://www.w3.org/2001/tag/doc/web-without-3p-cookies/">the TAG unequivocally condemned cross-site cookies and called for browsers to disable them</a>.
-Positive trends from browsers in recent years include a range of other technical measures,
-including reductions in fingerprinting, state partitioning, and <a href="https://privacycg.github.io/nav-tracking-mitigations/">navigation tracking mitigations</a>.</p>
-<p>These technical measures are consistent with the TAG's <a href="https://w3ctag.github.io/privacy-principles/">documented principles for privacy</a>.
+The TAG has also unequivocally
+<a href="https://www.w3.org/2001/tag/doc/web-without-3p-cookies/">condemned cross-site cookies and called for browsers to disable them</a>.</p>
+<p>Technical measures to prevent tracking are consistent
+with the TAG's <a href="https://w3ctag.github.io/privacy-principles/">documented principles for privacy</a>.
 These principles articulate why privacy is essential to maintaining personal autonomy.
 The same high-level principles are shared
 by the many jurisdictions that have implemented data protection legislation.
 The goal of data protection is to protect a person's rights over how data about them is used.</p>
-<p>In part due to these protections,
-tracking practices are moving away from largely hidden mechanisms —
-like cookies —
-to human interactions based on consent.
-That is, sites ask people to identify themselves.
-Once identifying information is provided,
-sites might then assume that they have consent to use that information for a range of purposes.</p>
-<p>Identity information might be provided as an email address or phone number.
-However, more sites also seek to obtain legal names or other identifying information.
-Unauthenticated systems might offer people the ability to choose how they wish to be identified.
-For instance, email services that provide temporary or site-specific aliases
-offer a way to create wholly-new or site-specific identities on demand.
-The same flexibility is not an option when providing a legal identity.</p>
-<p>Tracking with identity allows online activities
-to be linked to offline activity.
-The result can be a comprehensive record of everything a person does:
-places they go,
-what sites they visit,
-what they say,
-who they are friends with,
-and more.</p>
-</section><section id="overuse-of-identity"><div class="header-wrapper"><h2 id="x4-overuse-of-identity"><bdi class="secno">4. </bdi>Overuse of Identity</h2><a class="self-link" href="#overuse-of-identity" aria-label="Permalink for Section 4."></a></div>
+<p>Absent the ability to request legal identity,
+sites might ask for other identifiers,
+like an email address, credit card, mailing address, or phone number.
+Those identifiers could offer more privacy options, to varying degrees.
+For instance, email services can provide temporary or site-specific aliases
+to enable the creation of context-specific addresses on demand.
+Similar aliasing is achievable
+for other types of identifiers that are in common use,
+though it can be both significantly harder and more expensive.
+No such flexibility is possible when it comes to legal identity.</p>
+</section><section id="overuse-of-identity"><div class="header-wrapper"><h2 id="x5-overuse-of-identity"><bdi class="secno">5. </bdi>Overuse of Identity</h2><a class="self-link" href="#overuse-of-identity" aria-label="Permalink for Section 5."></a></div>
 <p>A streamlined process for providing verifiable identity
 reduces the cost of requesting and providing that information.
-In turn, this might make sites that would otherwise not ask for information
+In turn, this will make sites that would otherwise not ask for information
 choose to take advantage of reduced friction to make a request.</p>
-<section id="authorizing-sites"><div class="header-wrapper"><h3 id="x4-1-authorizing-sites"><bdi class="secno">4.1 </bdi>Authorizing Sites</h3><a class="self-link" href="#authorizing-sites" aria-label="Permalink for Section 4.1"></a></div>
-<p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
-envisions not only the issuance of digital credentials to individuals,
-but also the explicit authorization of businesses and service providers that will request those credentials.
-These entities (known as "relying parties")
-must be registered and approved by identity issuers,
-before they are granted permission to request only specific types of information.
-This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
-and that their ability to do so is constrained, transparent, and subject to oversight.</p>
-<p>This depends on having a system for transparency:</p>
-<blockquote>
-<p>relying parties should provide information regarding the data that they will request,
-if any, in order to provide their services and the reason for the request.</p>
-</blockquote>
-<p>Transparency contributes to accountability by making it possible for users to understand who is asking for what,
-and under what legal authority.
-This safeguard mitigates against some of the risks associated with digital credentials.
-However, it does not eliminate the need for scrutiny,
-particularly with regard to proportionality of use,
-user control, and the risk of such mechanisms becoming normalized across the web.
-Nevertheless, we recommend that the specification authors look to such mechanisms as a guide for mitigating
-potential harms in this area.</p>
-</section><section id="case-study-aadhaar"><div class="header-wrapper"><h3 id="x4-2-case-study-aadhaar"><bdi class="secno">4.2 </bdi>Case Study: Aadhaar</h3><a class="self-link" href="#case-study-aadhaar" aria-label="Permalink for Section 4.2"></a></div>
-<p>That digital credentials might be used to track people is not a fancy of science fiction,
+<p>Though increasing friction might not be worthwhile,
+other mechanisms might be used to disincentivise requests for legal identity.
+A method that might alter the costs for site operators
+is described in <a href="#auth" data-matched-text="[[[#auth]]]" class="sec-ref"><bdi class="secno">7.1 </bdi>Authorizing Sites</a>.</p>
+<p>Normalizing the practice of providing identity credentials to websites
+risks serious harm.
+Providing any form of external identity information needs to be an exceptional process.</p>
+<p>For example, it is entirely inappropriate to use government-issued credentials
+as a login credential,
+even if credentials are used during account creation.</p>
+<section id="case-study-aadhaar"><div class="header-wrapper"><h3 id="aadhaar"><bdi class="secno">5.1 </bdi>Case Study: Aadhaar</h3><a class="self-link" href="#aadhaar" aria-label="Permalink for Section 5.1"></a></div><p>That digital credentials might be used to track people is not a fancy of science fiction,
 it is the lived experience of a very large number of people.</p>
 <p>In India,
-the Aadhaar national identity scheme was introduced as a way to enable access to government services,
+the <a href="https://uidai.gov.in/">Aadhaar</a> national identity scheme
+was introduced as a way to enable access to government services,
 like health, welfare, and food assistance.
 Though the legislation
 originally included the option for Aadhaar to be used by non-government actors,
@@ -348,7 +379,7 @@ that provision
 was ruled <a href="https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf">unconstitutional</a>
 by the Supreme Court in 2018.</p>
 <p>In 2025,
-the Indian government has enabled wide use of Aadhar for any entitiy,
+the Indian government has enabled wide use of Aadhar for any entity,
 expanding the set of recognized reasons
 to include "<a href="https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2098223">promoting ease of living for residents</a>".
 As a result,
@@ -357,47 +388,27 @@ are potentially subject to surveillance through the use of their unique 12 digit
 which links fingerprints and iris scans to name and other personal details.</p>
 <p>Despite Aadhar use being optional in law,
 even prior to this change,
-its use was widespread in employment and other non-government interactions.</p>
-</section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x4-3-multiple-national-credentials"><bdi class="secno">4.3 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 4.3"></a></div>
-<p>Individuals with more than one nationality, when traveling across international borders,
-have the choice of which credential (passport) to assert.<br>For example, a person is generally required to present a passport
-for the country they entering if they are a citizen of that country,
-even if they hold other passports.
-When entering a country in which they do not hold citizenship,
-individuals with multiple nationalities have the choice of asserting
-whichever nationality is more convenient 
-(for example, one where they would not have to obtain a visa prior to traveling).
-The systems that support digital passport credentials –
-and therefore enable these assertions to move to the digital domain –
-should not behave any differently.
-Some countries already provide web apps (such as Visit Japan Web) that enable people
-to pre-register their passports by entering passport data manually,
-and national authorities will likely build these web apps
-to take advantage of digital credentials when they become available.
-It's vital that national authorities are not able to query or enumerate what
-credentials may exist and equally important that end users remain in control
-of what information is provided.</p>
-</section></section><section id="centralization-of-trust"><div class="header-wrapper"><h2 id="x5-centralization-of-trust"><bdi class="secno">5. </bdi>Centralization of Trust</h2><a class="self-link" href="#centralization-of-trust" aria-label="Permalink for Section 5."></a></div>
-<p>Centralisation of trust can lead to a fragmented web, where access depends on which authorities
-a site or user is willing, or able, to work with.</p>
-<p>This risks excluding marginalized people.</p>
-<p>For example, a visitor, migrant, or refugee may not be able to, or may not feel safe to, use credentials
-from their country of origin.
-Especially where major platforms only recognize a narrow set of issuers,
-or only recognize issuers tied to a specific jurisdiction.
-The choice of jurisdiction is not often something that a user can choose,
-but instead one dictated by factors outside of their control.
-This could undermine the global and open nature of the web.</p>
-</section><section id="exclusion"><div class="header-wrapper"><h2 id="x6-exclusion"><bdi class="secno">6. </bdi>Exclusion</h2><a class="self-link" href="#exclusion" aria-label="Permalink for Section 6."></a></div>
-<p>Online services that have <a href="https://en.wikipedia.org/wiki/Real-name_system">real-name policies</a> are justifiably controversial.
-These systems have historically resulted in excluding certain people,
-often due to people having names that systems do not recognize.</p>
-<p>A system that relies on a central authority is unlikely to replicate the same failures.
-New risks of exclusion arise:</p>
+refusals to do business were widespread in employment
+and other non-government interactions.
+This further highlights the need for accountability,
+but also demonstrates that there are strong incentives
+that motivate the use of legal identity where it is available.
+Privacy therefore depends on having an equivalently strong countervailing force.</p>
+</section></section><section id="exclusion"><div class="header-wrapper"><h2 id="x6-exclusion"><bdi class="secno">6. </bdi>Exclusion</h2><a class="self-link" href="#exclusion" aria-label="Permalink for Section 6."></a></div>
+<p>Online services that have <a href="https://en.wikipedia.org/wiki/Real-name_system">real-name policies</a>
+are justifiably controversial.
+The use of legal identity provides very different social dynamics
+when compared with <a href="https://www.eff.org/deeplinks/2011/07/case-pseudonyms">pseudonymous</a>
+or anonymous systems.</p>
+<p>Insistence on use of legal identity inevitably excludes certain people,
+which can be for a range of reasons:</p>
 <ul>
 <li>Sites that only recognize credentials from local authorities
 could unjustly exclude people from out of town,
 either temporarily or permanently.</li>
+<li>People might wish to remain anonymous
+for any reason,
+including fear of harm to their reputation or person.</li>
 <li>People might temporarily lose access to credentials
 because of a lost personal device
 or temporary disability.</li>
@@ -407,10 +418,11 @@ can be abused by attackers
 to forcibly exclude people.</li>
 </ul>
 <p>In some cases,
-such as Aadhaar,
+such as Aadhaar (<a href="#aadhaar" data-matched-text="[[[#aadhaar]]]" class="sec-ref"><bdi class="secno">5.1 </bdi>Case Study: Aadhaar</a>),
 the law recognizes the risk that people might not be able to produce evidence
 that they hold a credential
-and forbids discrimination against those who do not authenticate.</p>
+and forbids discrimination against those who do not authenticate.
+However, what matters is whether refusal is respected in practice.</p>
 <p>Even if laws only permit the use of digital credentials as a convenience,
 there is a risk that no alternative means of access to services are provided.
 This leads to exclusion.</p>
@@ -419,62 +431,141 @@ based on their refusal or inability to provide a digital credential.
 This is aligned with such principles
 as <a href="https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech">not revealing when assistive technologies are in use</a>
 or <a href="https://www.w3.org/TR/privacy-principles/#non-retaliation">non-retaliation</a>.</p>
-<p>Any credential system therefore needs to carefully consider
-what might happen if someone is unable to authenticate or they refuse to.
-This might include things like non-trivial induced failure rates,
-which could ensure that sites do not come to assume
-that all users are equally able to produce a credential.</p>
-</section><section id="use-cases-and-technical-options"><div class="header-wrapper"><h2 id="x7-use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</h2><a class="self-link" href="#use-cases-and-technical-options" aria-label="Permalink for Section 7."></a></div>
+<section id="centralization-of-trust"><div class="header-wrapper"><h3 id="x6-1-centralization-of-trust"><bdi class="secno">6.1 </bdi>Centralization of Trust</h3><a class="self-link" href="#centralization-of-trust" aria-label="Permalink for Section 6.1"></a></div>
+<p>Any website that requests legal identifiers
+needs to decide which legal identities it accepts.
+The easiest way to do this is to trust the issuers of credentials
+that are most-used among visitors
+and distrust the rest.
+Another way might be to choose government-issued credentials
+from jurisdictions in which the site has a legal presence.
+This risks centralization of trust in the most-used credentials
+and makes it hard for any new authority to become trusted.</p>
+<p>This centralization can lead to a fragmented web,
+where access depends on which authorities
+a site or user is willing, or able, to work with.</p>
+<p>This also risks marginalizing people
+who are unable to obtain accepted credentials
+for any reason.
+The choice of jurisdiction is not often something that a user can choose,
+but instead one dictated by factors outside of their control.
+This could undermine the global and open nature of the web.</p>
+<p>For example, a visitor, migrant, or refugee
+may not be able to, or may not feel safe to, use credentials
+from their country of origin.
+Especially where major platforms only recognize a narrow set of issuers,
+or only recognize issuers tied to a specific jurisdiction.</p>
+</section><section id="centralization-of-control"><div class="header-wrapper"><h3 id="x6-2-centralization-of-control"><bdi class="secno">6.2 </bdi>Centralization of Control</h3><a class="self-link" href="#centralization-of-control" aria-label="Permalink for Section 6.2"></a></div>
+<p>The implementation of identity verification is complex.
+Sites might choose to delegate to external services to manage the process.</p>
+<p>It is possible that a limited number of service providers
+will be capable of implementing the technical and legal process
+of gathering and validating credentials.
+This is presently the case for payments infrastructure,
+which has high degrees of consolidation.</p>
+<p>Centralized control provides opportunities to use —
+or, depending on perspective, abuse —
+the power it confers to advance political goals.
+For instance, centralized control over access to payments infrastructure
+has been used to <a href="https://stripe.com/au/legal/restricted-businesses#prohibited-businesses">refuse business</a>
+from <a href="https://www.aclu.org/news/lgbtq-rights/how-mastercard-is-endangering-sex-workers">sex work</a>,
+<a href="https://thejointllc.com/cash-only-cannabis/">legal drugs</a>,
+and <a href="https://pressspacetojump.com/feature/on-itch-io-payment-processors-and-the-developers-and-creatives-affected/">video games</a>.</p>
+<p>Open standards and implementations can help
+reduce this risk of capture.
+Designing systems and standards to minimize any structural bias
+that might lead to market consolidation is better.</p>
+</section></section><section id="use-cases-and-technical-options"><div class="header-wrapper"><h2 id="x7-use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</h2><a class="self-link" href="#use-cases-and-technical-options" aria-label="Permalink for Section 7."></a></div>
 <p>A better understanding of why sites seek to obtain and use identity is necessary.
 While the universality of a generic solution is appealing,
-each use case could depend on providing different sorts of information.</p>
-<p>[... need to have more on use cases in here ...]</p>
+each use case could depend on providing different sorts of information,
+as discussed in <a href="#reasons" data-matched-text="[[[#reasons]]]" class="sec-ref"><bdi class="secno">3. </bdi>Uses for Identity Information</a>.</p>
 <p>Each use case might require a different type of solution.
 Different solutions can have dramatically different privacy characteristics.</p>
-<p>For example,
-a <a href="https://w3ctag.github.io/privacy-principles/#data-minimization">data minimization</a> approach might favor the use of selective disclosure,
-so that people can choose what to disclose,
-either accepting the <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt-17#name-unlinkability">linkability risks</a>
-or regarding those as critical to ensuring that bad actors can be traced if necessary.</p>
-<p>In contrast, a system that seeks to authorize based on certain traits —
+<p>The properties of different approaches need to be understood and matched to needs.
+A possible <a href="https://w3ctag.github.io/privacy-principles/#data-minimization">data minimization</a> approach might choose to use selective disclosure,
+so that people can choose what is disclosed to sites.
+Such a system can accept the <a href="https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt-17#name-unlinkability">linkability risks</a>
+on the basis of the need for identifying information.
+Such a system might instead avoid identifying information,
+but rely on linkability as an essential feature,
+because it might be used to trace bad actors when necessary.
+These are very different reasons to use the same technique,
+with dramatically different privacy and control characteristics.</p>
+<p>A system that seeks to authorize based on certain traits —
 such as a system to authorize access to online gambling,
 something that might be restricted by age or past history of susceptibility —
 might be best suited to a zero-knowledge system
 that provides strong unlinkability.</p>
-</section><section id="identity-for-whom"><div class="header-wrapper"><h2 id="x8-identity-for-whom"><bdi class="secno">8. </bdi>Identity For Whom</h2><a class="self-link" href="#identity-for-whom" aria-label="Permalink for Section 8."></a></div>
-<p>Despite considerable investment
-in both technical and legal privacy protections,
-sites gather more information about people than they have previously.
-The use of government-issued identity documents on the web
-could make that situation worse
-if sites are able to insist that people present proof of identity.</p>
-<p>Normalizing the practice of providing identity credentials to websites
-risks serious harm.
-Providing any form of external identity information needs to be an exceptional process.</p>
-<p>For example, it is entirely inappropriate to use government-issued credentials
-as a login credential,
-even if credentials are used during account creation.</p>
-<p>European <a href="https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation">identity legislation</a>
-describes a system that has some potential to counteract
-the worst kinds of abuses that come from overuse of identity credentials.
-Entities that request EU digital identity
-will need to show that they are authorized.
-That authorization will be linked a public record
-that includes what information each entity can request
-and how they intend to use it.
-Implemented correctly,
-such a system could bring transparency and accountability.</p>
-<p>These systems carry risks,
-as demonstrated by experience with Aadhaar.
-A system that was designed for use by government —
-where non-governmental use was deemed an unconstitutional imposition on privacy —
-is now open to use by private actors.
-Even before that,
-<a href="https://www.researchgate.net/publication/345088314_Digital_identity_datafication_and_social_justice_understanding_Aadhaar_use_among_informal_workers_in_south_India">there were documented cases of Aadhaar being used to disempower Indian citizens</a>.
-These systems can provide substantial benefits,
-in terms of improved access to government services, banking, healthcare and other critical services.
-However, the resulting harms are not trivially justified by those benefits.</p>
-</section><section id="conclusion"><div class="header-wrapper"><h2 id="x9-conclusion"><bdi class="secno">9. </bdi>Conclusion</h2><a class="self-link" href="#conclusion" aria-label="Permalink for Section 9."></a></div>
+<p>This highlights that there is no single approach
+that will work in all cases.
+For a web API, like digital credentials,
+this is challenging,
+because such APIs need to serve a range of purposes.
+However, this highlights that it is unlikely to be clear to the people
+who need to authorize use of their credentials
+whether the system they are participating in
+has adequate safeguards for the situation.</p>
+<p>Developing a better understanding of what is appropriate
+for a given situation
+will take time.
+Developing the necessary understanding of different uses of new technology —
+and then evolving norms to handle those situations —
+is not something that can be rushed.
+<a href="https://developer.apple.com/videos/play/wwdc2025/232/">Deployment</a> <a href="https://developer.chrome.com/blog/digital-credentials-api-origin-trial">is</a>.</p>
+<section id="authorizing-sites"><div class="header-wrapper"><h3 id="auth"><bdi class="secno">7.1 </bdi>Authorizing Sites</h3><a class="self-link" href="#auth" aria-label="Permalink for Section 7.1"></a></div><p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
+envisions not only the issuance of digital credentials to individuals,
+but also the explicit authorization of businesses and service providers that will request those credentials.</p>
+<p>These business or government entities (known as "relying parties")
+must be registered and approved by identity issuers,
+before they are granted permission to access the system.
+Relying parties can then request only the information they received approval for.
+This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
+and that their ability to do so is constrained, transparent, and subject to oversight.</p>
+<p>This depends on having a system for transparency:</p>
+<blockquote>
+<p>relying parties should provide information regarding the data that they will request,
+if any, in order to provide their services and the reason for the request.</p>
+</blockquote>
+<p>Transparency contributes to accountability
+by making it possible for users to understand who is asking for what,
+and under what legal authority.
+This safeguard mitigates against some of the risks associated with digital credentials.
+However, it does not eliminate the need for scrutiny,
+particularly with regard to proportionality of use,
+user control, and the risk of such mechanisms becoming normalized across the web.
+Nevertheless, we recommend that the specification authors
+look to such mechanisms as a guide for mitigating
+potential harms in this area.</p>
+</section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x7-2-multiple-national-credentials"><bdi class="secno">7.2 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 7.2"></a></div>
+<p>Individuals with more than one nationality, when traveling across international borders,
+have the choice of which credential (passport) to assert.
+For example, a person is generally required to present a passport
+for the country they entering if they are a citizen of that country,
+even if they hold other passports.
+When entering a country in which they do not hold citizenship,
+individuals with multiple nationalities have the choice of asserting
+whichever nationality is more convenient.</p>
+<p>The systems that support digital passport credentials —
+and therefore enable these assertions to move to the digital domain —
+should not behave any differently.
+It's vital that national authorities are not able to query or enumerate what
+credentials may exist and equally important that end users remain in control
+of what information is provided.</p>
+</section><section id="avoiding-dependence"><div class="header-wrapper"><h3 id="x7-3-avoiding-dependence"><bdi class="secno">7.3 </bdi>Avoiding Dependence</h3><a class="self-link" href="#avoiding-dependence" aria-label="Permalink for Section 7.3"></a></div>
+<p>Any credential system needs to carefully consider
+what might happen if someone is unable to authenticate or they refuse to.</p>
+<p>A protection that might protect people who cannot provide a credential,
+for <a href="#exclusion">any reason</a>,
+might be to artificially induce a non-trivial failure rate
+even where credentials are available and valid.
+This might ensure that sites do not come to assume
+that all users are equally able to produce a credential
+and so build systems to handle failures.</p>
+<p>Any choice to induce such failures needs to be balanced
+against the potential for fallback mechanisms
+to be considerably less private.</p>
+</section></section><section id="call-to-action"><div class="header-wrapper"><h2 id="x8-call-to-action"><bdi class="secno">8. </bdi>Call to Action</h2><a class="self-link" href="#call-to-action" aria-label="Permalink for Section 8."></a></div>
 <p>The TAG supports the work on digital credentials.
 And we also encourage the groups working in this space to consider all the
 risks associated with these technologies with open eyes, and to develop mitigations
@@ -485,8 +576,14 @@ putting "internationally recognized human rights at the core of the web platform
 We can think of no area of current work where this is more important.</p>
 </section><section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informative-references"><div class="header-wrapper"><h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.1"></a></div>
     
-    <dl class="bibliography"><dt id="bib-ethical-web-principles">[ETHICAL-WEB-PRINCIPLES]</dt><dd>
+    <dl class="bibliography"><dt id="bib-council-report">[COUNCIL-REPORT]</dt><dd>
+      <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html"><cite>W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API</cite></a>. 2025-02-20. URL: <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html">https://www.w3.org/2025/02/council-report-fedid-dig-cred.html</a>
+    </dd><dt id="bib-ethical-web-principles">[ETHICAL-WEB-PRINCIPLES]</dt><dd>
       <a href="https://www.w3.org/TR/ethical-web-principles/"><cite>Ethical Web Principles</cite></a>. Daniel Appelquist; Hadley Beeman; Amy Guy.  W3C. 12 December 2024. STMT. URL: <a href="https://www.w3.org/TR/ethical-web-principles/">https://www.w3.org/TR/ethical-web-principles/</a>
+    </dd><dt id="bib-objection">[OBJECTION]</dt><dd>
+      <a href="https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html"><cite>[/wg/fedid] Formal Objection (charter review)</cite></a>.  W3C. 2024-09-12. URL: <a href="https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html">https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html</a>
+    </dd><dt id="bib-privacy-principles">[PRIVACY-PRINCIPLES]</dt><dd>
+      <a href="https://www.w3.org/TR/privacy-principles/"><cite>Privacy Principles</cite></a>. Robin Berjon; Jeffrey Yasskin.  W3C. 15 May 2025. STMT. URL: <a href="https://www.w3.org/TR/privacy-principles/">https://www.w3.org/TR/privacy-principles/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
