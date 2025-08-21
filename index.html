@@ -70,7 +70,8 @@ APIs that facilitate access to verifiable claims about identity,
 such as the proposed [Digital Credentials API](https://wicg.github.io/digital-credentials/),
 are starting to be developed and deployed.
 A large number of jurisdictions are starting
-to create digital identity systems for their citizens.
+to create digital identity systems for their citizens. [Verifiable Credentials Data Model](https://www.w3.org/TR/vc-data-model-2.0/) 
+facilitates interoperable communication across all stages of digital credential exchange, from the digital identity wallet to issuance and presentation protocols. 
 The [Federated Identity Working Group](https://www.w3.org/2025/02/wg-fedid.html)
 includes an API for accessing these systems
 as a chartered deliverable.
@@ -103,6 +104,8 @@ that these concerns be addressed in the work of the Working Group.
 
 
 ## Finding Summary
+
+Online abuse takes different forms, resulting in emotional, financial or even physical [harm to individuals](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9519435&tag=1). Digital Credentials must not inadvertently contribute to an increase in any form of online abuse or harm.
 
 The TAG believes that the addition of government-issued digital credentials to the web
 has great potential for harm.
@@ -165,7 +168,8 @@ the use of identity documents is not appropriate.
 Any benefits are not justified by the cost
 that people pay in terms of losing their ability to control
 [the identity they present](https://w3ctag.github.io/privacy-principles/#principle-identity-per-context)
-[[PRIVACY-PRINCIPLES]].
+[[PRIVACY-PRINCIPLES]]. The consequence of losing this control varies across individuals, leading to a range potential harms. This could 
+[disproportionately](https://dl.acm.org/doi/pdf/10.1145/3411764.3445132) impact vulnerable individuals.
 Other goals are inherently objectionable.
 
 
@@ -326,11 +330,15 @@ and distrust the rest.
 Another way might be to choose government-issued credentials
 from jurisdictions in which the site has a legal presence.
 This risks centralization of trust in the most-used credentials
-and makes it hard for any new authority to become trusted.
+and makes it hard for any new authority to become trusted. 
+Additionally, the user agent must trust the identity wallet to securely store credentials 
+and prevent the registration of fraudulent physical government-issued credentials into the digital domain.
+
 
 This centralization can lead to a fragmented web,
 where access depends on which authorities
-a site or user is willing, or able, to work with.
+a site or user is willing, or able, to work with. This can potentially prohibit access of individual with low-budget devices with no integrated secure hardware, 
+a requirement for identity wallets. This is against the TAG's [[[ETHICAL-WEB-PRINCIPLES]]].
 
 This also risks marginalizing people
 who are unable to obtain accepted credentials
@@ -436,9 +444,8 @@ This depends on having a system for transparency:
 > relying parties should provide information regarding the data that they will request,
 > if any, in order to provide their services and the reason for the request.
 
-Transparency contributes to accountability
-by making it possible for users to understand who is asking for what,
-and under what legal authority.
+Transparency and verifiability contribute to accountability by making it possible for users to understand who is asking for what,
+and under what legal authority, with non-repudiation and traceability.
 This safeguard mitigates against some of the risks associated with digital credentials.
 However, it does not eliminate the need for scrutiny,
 particularly with regard to proportionality of use,
@@ -448,7 +455,7 @@ look to such mechanisms as a guide for mitigating
 potential harms in this area.
 
 
-### Multiple National Credentials
+### Multiple or No National Credentials 
 
 Individuals with more than one nationality, when traveling across international borders,
 have the choice of which credential (passport) to assert.
@@ -466,6 +473,14 @@ It's vital that national authorities are not able to query or enumerate what
 credentials may exist and equally important that end users remain in control
 of what information is provided.
 
+In contrast, Individuals without valid government-issued credentials, such as refugees, stateless individuals, and
+asylum seekers, often face significant challenges in providing legitimate physical credentials to establish their
+digital identity due to various barriers.
+The systems that support digital credentials should provide means to offer support for international, interoperable
+solutions such as [[UN Refugee Agency]](https://www.unhcr.org/what-we-do/protect-human-rights/protection/registration-and-identity-management).
+These solutions must comply with international regulations and ensure that digital credentials are not deliberately
+shared with the individual's original country, as this could potentially lead to serious harms. It is essential that
+the end user retains full control over their digital credentials and the process of credential exchange.
 
 ### Avoiding Dependence
 
