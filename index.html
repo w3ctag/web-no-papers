@@ -37,6 +37,12 @@ var respecConfig = {
       href: "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
       date: "2025-02-20",
     },
+    "PERSONHOOD": {
+      title: "Personhood credentials: Artificial intelligence and the value of privacy-preserving tools to distinguish who is real online",
+      href: "https://arxiv.org/abs/2408.07892",
+      date: "2024-08-15",
+      authors: ["Steven Adler", "Zoë Hitzig", "Shrey Jain", "Catherine Brewer", "Wayne Chang", "Renée DiResta", "Eddy Lazzarin", "Sean McGregor", "Wendy Seltzer", "Divya Siddarth", "Nouran Soliman", "Tobin South", "Connor Spelliscy", "Manu Sporny", "Varya Srivastava", "John Bailey", "Brian Christian", "Andrew Critch", "Ronnie Falcon", "Heather Flanagan", "Kim Hamilton Duffy", "Eric Ho", "Claire R. Leibowicz", "Srikanth Nadhamuni", "Alan Z. Rozenshtein", "David Schnurr", "Evan Shapiro", "Lacey Strahm", "Andrew Trask", "Zoe Weinberg", "Cedric Whitney", "Tom Zick"],
+    }
   },
 };
 </script>
@@ -446,6 +452,39 @@ user control, and the risk of such mechanisms becoming normalized across the web
 Nevertheless, we recommend that the specification authors
 look to such mechanisms as a guide for mitigating
 potential harms in this area.
+
+
+### Improving Inclusion
+
+In some circumstances,
+people might be unable to obtain a government-issued credential
+that is acceptable to websites.
+There are many reasons this might happen,
+but those reasons are not always cause to exclude people.
+In particular,
+people displaced by war, conflict, famine, persecution,
+or events beyond their control
+might be unable &mdash; or willing &mdash;
+to access services necessary to obtain a credential.
+
+This is not always a problem that can be addressed through system design.
+For instance,
+when interacting with a government
+there are cases where it is appropriate to limit credentials
+to those issued by that government.
+
+Systems that do not have these constraints
+can be designed to recognize a more diverse set of issuers,
+offering sites no discretion in what they recognize.
+That way, organizations that help displaced people
+participate in society,
+such as <a href="https://www.unhcr.org/about-unhcr/who-we-protect"><abbr title="The UN Refugee Agency">UNHCR</abbr></a>
+or <a href="https://www.msf.org/refugees-idps-and-people-move"><abbr title="Médecins Sans Frontières">MSF</title></a>,
+might be recognized as valid issuers
+for cases that do not include a need to identify an issuer.
+This might include credentials that include claims about inherent traits of a person,
+such as their name, appearance, age ([[[#age-verification]]]),
+or even personhood ([[[PERSONHOOD]]]).
 
 
 ### Multiple National Credentials
