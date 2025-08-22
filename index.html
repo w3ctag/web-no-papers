@@ -37,6 +37,12 @@ var respecConfig = {
       href: "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
       date: "2025-02-20",
     },
+    "SUPPRESS": {
+      title: "The \"Segregate-and-Suppress\" Approach to Regulating Child Safety Online",
+      href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208739",
+      date: "2025-04-08",
+      authors: ["Eric Goldman"],
+    }
   },
 };
 </script>
@@ -273,7 +279,41 @@ that motivate the use of legal identity where it is available.
 Privacy therefore depends on having an equivalently strong countervailing force.
 
 
-## Exclusion
+### Age Verification
+
+A number of governments have chosen to mandate the use of age verification
+for access to certain online services.
+There are many issues that might be discussed on the topic,
+including whether age verification is even appropriate [[SUPPRESS]],
+all beyond the scope of this document.
+
+How different jurisdictions have set out requirements for age verification vary,
+but a common theme is to place the responsibility on the service provider.
+The presentation of government-issued credentials
+is often recognized as an acceptable age verification method;
+in other cases, digital credentials are one of a set of acceptable methods.
+
+The presentation of identity documents
+to access content that might be sensitive
+creates some serious privacy issues.
+A great deal then depends on how credentials
+are requested, authorized ([[[#auth-use]]]), and handled.
+The selective disclosure methods
+(such as [SD-JWT](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt))
+that are used in some designs
+create a vulnerability where governments and service providers
+can collude to identify site visitors.
+The use of zero-knowledge proofs might address
+some of the concerns around privacy.
+
+Even if privacy concerns around surveillance are mitigated,
+the use of credentials in this setting creates another way in which
+people might become accustomed to providing their identity documents.
+Use of credentials for age verification therefore leads to
+all the other problems this document identifies.
+
+
+## Exclusion {#exclusion}
 
 Online services that have [real-name policies](https://en.wikipedia.org/wiki/Real-name_system)
 are justifiably controversial.
@@ -416,6 +456,25 @@ Developing the necessary understanding of different uses of new technology &mdas
 and then evolving norms to handle those situations &mdash;
 is not something that can be rushed.
 [Deployment](https://developer.apple.com/videos/play/wwdc2025/232/) [is](https://developer.chrome.com/blog/digital-credentials-api-origin-trial).
+
+
+### Authorizing Use {#auth-use}
+
+Many uses of digital credentials will rely on asking people to make a decision
+about whether to authorize the use of the credential.
+
+Designing a system that can convey the details
+of what people are being asked to approve given the potential diversity of uses
+in a sufficiently comprehensible manner is challenging.
+Understanding what information is disclosed,
+particularly non-obvious data or metadata &mdash;
+such as the identity of an issuer or linkability &mdash;
+might be necessary to enable an informed choice.
+
+Distinguishing different use cases or information profiles
+might be essential in terms of system design,
+but it might not be realistic to design interfaces
+that make some of the finer distinctions obvious.
 
 
 ### Authorizing Sites {#auth}
