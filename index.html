@@ -42,7 +42,13 @@ var respecConfig = {
       href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208739",
       date: "2025-04-08",
       authors: ["Eric Goldman"],
-    }
+    },
+    "AGE-WS": {
+      title: "Upcoming: IAB/W3C Workshop on Age-Based Restrictions on Content Access",
+      href: "https://www.w3.org/news/2025/upcoming-iab-w3c-workshop-on-age-based-restrictions-on-content-access/",
+      date: "2025-07-15",
+      publisher: "W3C",
+    },
   },
 };
 </script>
@@ -286,6 +292,9 @@ for access to certain online services.
 There are many issues that might be discussed on the topic,
 including whether age verification is even appropriate [[SUPPRESS]],
 all beyond the scope of this document.
+An upcoming workshop will address the issue
+of age-based restrictions on content and services
+in detail [[AGE-WS]].
 
 How different jurisdictions have set out requirements for age verification vary,
 but a common theme is to place the responsibility on the service provider.
@@ -308,8 +317,9 @@ The selective disclosure methods
 that are used in some designs
 create a vulnerability where governments and service providers
 can collude to identify site visitors.
-The use of zero-knowledge proofs might address
-some of the concerns around privacy.
+Such solutions are unacceptable for privacy reasons.
+The use of zero-knowledge proofs
+might prevent tracking in the presence of collusion.
 
 
 ## Exclusion {#exclusion}
