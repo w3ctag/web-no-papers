@@ -193,14 +193,6 @@ online or offline.
 The resulting profiles are then used for many purposes
 including advertising, credit ratings, and market analysis.
 
-Some credential systems use linkable presentations or
-demand live interactions with an issuer
-to validate presentations.
-These can allow sites or issuing authorities
-to track activity across contexts,
-even where the information presented to a site
-does not obviously include enough information to enable tracking.
-
 The TAG regards [unsanctioned tracking as unacceptable](https://www.w3.org/2001/tag/doc/unsanctioned-tracking/)
 and has advocated for technical measures that curtail these practices.
 The TAG has also unequivocally
@@ -223,6 +215,32 @@ Similar aliasing is achievable
 for other types of identifiers that are in common use,
 though it can be both significantly harder and more expensive.
 No such flexibility is possible when it comes to legal identity.
+
+
+### Tracking Inherent to Credential Formats
+
+Some credential systems use linkable presentations
+or demand live interactions with an issuer to validate presentations
+or use linkable presentations.
+This creates a tracking risk that is inherent to the credential design.
+
+Presentations of some selective disclosure credential formats,
+such as [SD-JWT](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt)
+or [SD-CWT](https://datatracker.ietf.org/doc/html/draft-ietf-spice-sd-cwt),
+are always traceable with the assistance of their issuer.
+Presentations to different sites requires completely fresh credentials each time
+to prevent linking by those sites.
+
+Linkability can allow sites or issuing authorities
+to track activity across contexts.
+This can happen despite the information presented to a site
+not obviously containing identifiers
+or other information that might obviously enable tracking.
+
+The use of zero-knowledge proofs might prevent this style of tracking.
+Zero-knowledge systems create fresh challenges,
+such as a greater risk of people being able to share credentials
+or proofs being forgeable if a cryptographically-relevant quantum computer is developed.
 
 
 ## Overuse of Identity
