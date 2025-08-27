@@ -78,9 +78,13 @@ such as the proposed [Digital Credentials API](https://wicg.github.io/digital-cr
 are starting to be developed and deployed.
 A large number of jurisdictions are starting
 to create digital identity systems for their citizens.
+
 The [Federated Identity Working Group](https://www.w3.org/2025/02/wg-fedid.html)
 includes an API for accessing these systems
 as a chartered deliverable.
+This API follows a three-party model
+where the primary actors are the [=issuer=], [=holder=], and [=verifier=];
+as defined in [[VC-DATA-MODEL-2.0]].
 
 Digital identity APIs provide a convenient way
 for websites to access proof of legal identity.
@@ -443,7 +447,7 @@ This depends on having a system for transparency:
 > relying parties should provide information regarding the data that they will request,
 > if any, in order to provide their services and the reason for the request.
 
-Transparency contributes to accountability
+Verifiable transparency mechanisms contribute to accountability
 by making it possible for users to understand who is asking for what,
 and under what legal authority.
 This safeguard mitigates against some of the risks associated with digital credentials.
