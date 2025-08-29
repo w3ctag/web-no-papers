@@ -32,6 +32,13 @@ var respecConfig = {
       date: "2017-01-18",
       publisher: "The Caravan",
     },
+    "AADHAAR-VERDICT": {
+      title: "WRIT PETITION (CIVIL) NO. 494 OF 2012",
+      href: "https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf",
+      date: "2018-09-26",
+      publisher: "The Supreme Court of India",
+      authors: ["DIPAK MISRA", "A.K. SIKRI, J.", "A.M. KHANWILKAR"],
+    },
     "AGE-WS": {
       title: "IAB/W3C Workshop on Age-Based Restrictions on Content Access",
       href: "https://datatracker.ietf.org/group/agews/about/",
@@ -41,6 +48,12 @@ var respecConfig = {
       title: "W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API",
       href: "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
       date: "2025-02-20",
+    },
+    "EIDAS2": {
+      title: "Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024 amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity Framework",
+      href: "https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng",
+      date: "2024-04-11",
+      publisher: "EU",
     },
     "OBJECTION": {
       title: "[/wg/fedid] Formal Objection (charter review)",
@@ -203,7 +216,7 @@ that people pay in terms of losing their ability to control
 Other goals are inherently objectionable.
 
 
-## Tracking with Legal Identity {#tracking}
+### Tracking with Legal Identity {#tracking}
 
 Once someone has provided legal identity,
 sites are technically able to use identifiers in any way they choose.
@@ -251,7 +264,7 @@ though it can be both significantly harder and more expensive.
 No such flexibility is possible when it comes to legal identity.
 
 
-### Tracking Inherent to Credential Formats
+### Tracking Inherent to Credential Formats {#tracking-cred}
 
 Some credential systems use linkable presentations
 or demand live interactions with an issuer to validate presentations
@@ -277,7 +290,7 @@ such as a greater risk of people being able to share credentials
 or proofs being forgeable if a cryptographically-relevant quantum computer is developed.
 
 
-## Overuse of Identity
+## Overuse of Identity {#overuse}
 
 Legal mandates to use official documentation is not new.
 The use of government credentials
@@ -285,9 +298,9 @@ to conduct business with governments
 or where business comes with obligations to governments is not new.
 In many cases, sites only ask because they are legally obligated to.
 
-The question is whether widespread availability of credentials
+Widespread availability of credentials
 and improved ease of use
-lead to cases where credentials are requested
+can lead to cases where credentials are requested
 when they might otherwise not be.
 
 A streamlined process for providing verifiable identity
@@ -319,8 +332,7 @@ Though the legislation
 originally included the option for Aadhaar to be used by non-government actors,
 that provision
 (Section 57)
-was ruled [unconstitutional](https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf)
-by the Supreme Court in 2018.
+was ruled unconstitutional by the Supreme Court in 2018 [[AADHAAR-VERDICT]].
 
 In 2025,
 the Indian government has enabled wide use of Aadhar for any entity,
@@ -358,10 +370,10 @@ The presentation of government-issued credentials
 is often recognized as an acceptable age verification method;
 in other cases, government credentials are one of a set of acceptable methods.
 
-Even if privacy concerns around surveillance are mitigated,
+Even if privacy concerns around surveillance are mitigated
+(see [[[#tracking]]] and [[[#tracking-cred]]]),
 the use of credentials in this setting creates another way in which
 people might become accustomed to providing their identity documents.
-Use of credentials for age verification therefore leads to credential overuse.
 
 
 ## Exclusion {#exclusion}
@@ -384,16 +396,16 @@ which can be for a range of reasons:
 * People might temporarily lose access to credentials
   because of a lost personal device
   or temporary disability.
-* People might be completely unable to obtain or use credentials.
+* People might be completely unable to obtain or use credentials
+  due to factors outside their control.
 * Systems that include the ability to revoke credentials
   can be abused by attackers
   to forcibly exclude people.
 
 In some cases,
 such as Aadhaar ([[[#aadhaar]]]),
-the law recognizes the risk that people might not be able to produce evidence
-that they hold a credential
-and forbids discrimination against those who do not authenticate.
+laws could recognize the risk that people might not be able to present a credential
+and forbids discrimination against those who do not.
 However, what matters is whether refusal is respected in practice.
 
 Even if laws only permit the use of digital credentials as a convenience,
@@ -416,19 +428,16 @@ that are most-used among visitors
 and distrust the rest.
 Another way might be to choose government-issued credentials
 from jurisdictions in which the site has a legal presence.
+
 This risks centralization of trust in the most-used credentials
 and makes it hard for any new authority to become trusted.
-
 Centralizing trust in a limited set of authorities
 can lead to a fragmented web,
 where access depends on which authorities
 a site or user is willing, or able, to work with.
 
-Choosing a limited set of issuers also risks marginalizing people
+Choosing a limited set of issuers risks marginalizing people
 who are unable to obtain credentials that will be accepted.
-There might be many reasons why someone cannot get a credential.
-The choice of jurisdiction is not often something that a user can choose,
-but instead one dictated by factors outside of their control.
 This could undermine the global and open nature of the web.
 
 For example, a visitor, migrant, or refugee
@@ -474,13 +483,13 @@ Different solutions can have dramatically different privacy characteristics.
 The properties of different approaches need to be understood and matched to needs.
 A possible [data minimization](https://w3ctag.github.io/privacy-principles/#data-minimization) approach might choose to use selective disclosure,
 so that people can choose what is disclosed to sites.
-Such a system can accept the [linkability risks](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-selective-disclosure-jwt-17#name-unlinkability)
+Such a system can accept the linkability risks
+(see [[[#tracking-cred]]])
 on the basis of the need for identifying information.
 Such a system might instead avoid identifying information,
 but rely on linkability as an essential feature,
 because it might be used to trace bad actors when necessary.
-These are very different reasons to use the same technique,
-with dramatically different privacy and control characteristics.
+These are very different reasons to use the same technique.
 
 A system that seeks to authorize based on certain traits &mdash;
 such as a system to authorize access to online gambling,
@@ -488,23 +497,12 @@ something that might be restricted by age or past history of susceptibility &mda
 might be best suited to a zero-knowledge system
 that provides strong unlinkability.
 
-This highlights that there is no single approach
-that will work in all cases.
+Use cases are diverse.
+There is no single approach
+that can adapt to all use cases.
 For a web API, like digital credentials,
 this is challenging,
 because such APIs need to serve a range of purposes.
-However, this highlights that it is unlikely to be clear to the people
-who need to authorize use of their credentials
-whether the system they are participating in
-has adequate safeguards for the situation.
-
-Developing a better understanding of what is appropriate
-for a given situation
-will take time.
-Developing the necessary understanding of different uses of new technology &mdash;
-and then evolving norms to handle those situations &mdash;
-is not something that can be rushed.
-[Deployment](https://developer.apple.com/videos/play/wwdc2025/232/) [is](https://developer.chrome.com/blog/digital-credentials-api-origin-trial).
 
 
 ### Authorizing Use {#auth-use}
@@ -522,21 +520,30 @@ Communicating the implications can be particularly difficult
 when credentials are linkable
 or reveal metadata, such as the issuer identity.
 
+Developing a better understanding of what is appropriate
+for a given situation
+will take time.
+Developing the necessary understanding of different uses of new technology &mdash;
+and then evolving norms to handle those situations &mdash;
+is not something that can be rushed.
+[Deployment](https://developer.apple.com/videos/play/wwdc2025/232/) [is](https://developer.chrome.com/blog/digital-credentials-api-origin-trial).
+
 
 ### Authorizing Sites {#auth}
 
 The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
 envisions not only the issuance of digital credentials to individuals,
-but also the explicit authorization of businesses and service providers that will request those credentials.
+but also the explicit authorization of the businesses and service providers
+who request those credentials.
 
-These business or government entities (known as "relying parties")
+These business or government entities
 must be registered and approved by identity issuers,
 before they are granted permission to access the system.
-Relying parties can then request only the information they received approval for.
+These entities are then only able to request the information they received approval for.
 This design is intended to ensure that businesses and agencies cannot request arbitrary personal data,
 and that their ability to do so is constrained, transparent, and subject to oversight.
 
-This depends on having a system for transparency:
+This depends on having a system for transparency [[EIDAS2]]:
 
 > relying parties should provide information regarding the data that they will request,
 > if any, in order to provide their services and the reason for the request.
@@ -545,12 +552,12 @@ Verifiable transparency mechanisms contribute to accountability
 by making it possible for users to understand who is asking for what,
 and under what legal authority.
 This safeguard mitigates against some of the risks associated with digital credentials.
-However, it does not eliminate the need for scrutiny,
-particularly with regard to proportionality of use,
-user control, and the risk of such mechanisms becoming normalized across the web.
+
+Transparency depends on people who review use
+for proportionality, user control, and other risks,
+especially overuse ([[[#overuse]]]).
 Nevertheless, we recommend that the specification authors
-look to such mechanisms as a guide for mitigating
-potential harms in this area.
+look to such mechanisms as a guide for mitigating risk of overuse.
 
 
 ### Improving Inclusion
@@ -579,8 +586,9 @@ or even personhood ([[[PERSONHOOD]]]).
 
 ### Multiple National Credentials
 
-Individuals with more than one nationality, when traveling across international borders,
-have the choice of which credential (passport) to assert.
+Individuals with more than one nationality,
+when traveling across international borders,
+have the choice of which credential (passport) to present.
 For example, a person is generally required to present a passport
 for the country they entering if they are a citizen of that country,
 even if they hold other passports.
@@ -588,11 +596,13 @@ When entering a country in which they do not hold citizenship,
 individuals with multiple nationalities have the choice of asserting
 whichever nationality is more convenient.
 
-The systems that support digital passport credentials &mdash;
-and therefore enable these assertions to move to the digital domain &mdash;
-should not behave any differently.
-It is vital that national authorities are not able to query or enumerate what
-credentials may exist and equally important that end users remain in control
+The systems that support digital passport credentials
+need to ensure that these choices remain viable
+as credentials move to the digital domain.
+In particular,
+it is vital that national authorities are not able to query or enumerate
+what credentials may exist
+and equally important that end users remain in control
 of what information is provided.
 
 
