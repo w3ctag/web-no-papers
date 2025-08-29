@@ -26,21 +26,27 @@ var respecConfig = {
   github: "w3ctag/web-no-papers",
   format: "markdown",
   localBiblio: {
+    "AADHAAR-MANDATORY": {
+      title: "Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary",
+      href: "https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015",
+      date: "2017-01-18",
+      publisher: "The Caravan",
+    },
     "AGE-WS": {
       title: "IAB/W3C Workshop on Age-Based Restrictions on Content Access",
       href: "https://datatracker.ietf.org/group/agews/about/",
       date: "2025-07-15",
+    },
+    "COUNCIL-REPORT": {
+      title: "W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API",
+      href: "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
+      date: "2025-02-20",
     },
     "OBJECTION": {
       title: "[/wg/fedid] Formal Objection (charter review)",
       href: "https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html",
       date: "2024-09-12",
       publisher: "W3C",
-    },
-    "COUNCIL-REPORT": {
-      title: "W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API",
-      href: "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
-      date: "2025-02-20",
     },
     "SUPPRESS": {
       title: "The \"Segregate-and-Suppress\" Approach to Regulating Child Safety Online",
@@ -82,9 +88,13 @@ such as the proposed [Digital Credentials API](https://wicg.github.io/digital-cr
 are starting to be developed and deployed.
 A large number of jurisdictions are starting
 to create digital identity systems for their citizens.
+
 The [Federated Identity Working Group](https://www.w3.org/2025/02/wg-fedid.html)
 includes an API for accessing these systems
 as a chartered deliverable.
+This API follows a three-party model
+where the primary actors are the [=issuer=], [=holder=], and [=verifier=];
+as defined in [[VC-DATA-MODEL-2.0]].
 
 Digital identity APIs provide a convenient way
 for websites to access proof of legal identity.
@@ -278,6 +288,8 @@ Despite Aadhar use being optional in law,
 even prior to this change,
 refusals to do business were widespread in employment
 and other non-government interactions.
+A number of government services soon
+made Aadhaar use mandatory [[AADHAAR-MANDATORY]].
 This further highlights the need for accountability,
 but also demonstrates that there are strong incentives
 that motivate the use of legal identity where it is available.
@@ -360,19 +372,20 @@ from jurisdictions in which the site has a legal presence.
 This risks centralization of trust in the most-used credentials
 and makes it hard for any new authority to become trusted.
 
-This centralization can lead to a fragmented web,
+Centralizing trust in a limited set of authorities
+can lead to a fragmented web,
 where access depends on which authorities
 a site or user is willing, or able, to work with.
 
-This also risks marginalizing people
-who are unable to obtain accepted credentials
-for any reason.
+Choosing a limited set of issuers also risks marginalizing people
+who are unable to obtain credentials that will be accepted.
+There might be many reasons why someone cannot get a credential.
 The choice of jurisdiction is not often something that a user can choose,
 but instead one dictated by factors outside of their control.
 This could undermine the global and open nature of the web.
 
 For example, a visitor, migrant, or refugee
-may not be able to, or may not feel safe to, use credentials
+may not be able to &mdash; or may not feel safe to &mdash; use credentials
 from their country of origin.
 Especially where major platforms only recognize a narrow set of issuers,
 or only recognize issuers tied to a specific jurisdiction.
@@ -406,12 +419,9 @@ that might lead to market consolidation is better.
 
 ## Use Cases and Technical Options
 
-A better understanding of why sites seek to obtain and use identity is necessary.
+Sites seek to obtain and use identity for multiple reasons; see [[[#reasons]]].
 While the universality of a generic solution is appealing,
-each use case could depend on providing different sorts of information,
-as discussed in [[[#reasons]]].
-
-Each use case might require a different type of solution.
+each use case might require a different type of solution.
 Different solutions can have dramatically different privacy characteristics.
 
 The properties of different approaches need to be understood and matched to needs.
@@ -484,7 +494,7 @@ This depends on having a system for transparency:
 > relying parties should provide information regarding the data that they will request,
 > if any, in order to provide their services and the reason for the request.
 
-Transparency contributes to accountability
+Verifiable transparency mechanisms contribute to accountability
 by making it possible for users to understand who is asking for what,
 and under what legal authority.
 This safeguard mitigates against some of the risks associated with digital credentials.
