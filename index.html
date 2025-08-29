@@ -133,12 +133,18 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "github": "w3ctag/web-no-papers",
   "format": "markdown",
   "localBiblio": {
-    "OBJECTION": {
-      "title": "[/wg/fedid] Formal Objection (charter review)",
-      "href": "https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html",
-      "date": "2024-09-12",
-      "publisher": "W3C",
-      "id": "objection"
+    "AADHAAR-MANDATORY": {
+      "title": "Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary",
+      "href": "https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015",
+      "date": "2017-01-18",
+      "publisher": "The Caravan",
+      "id": "aadhaar-mandatory"
+    },
+    "AGE-WS": {
+      "title": "IAB/W3C Workshop on Age-Based Restrictions on Content Access",
+      "href": "https://datatracker.ietf.org/group/agews/about/",
+      "date": "2025-07-15",
+      "id": "age-ws"
     },
     "COUNCIL-REPORT": {
       "title": "W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API",
@@ -146,28 +152,37 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "date": "2025-02-20",
       "id": "council-report"
     },
-    "AADHAAR-MANDATORY": {
-      "title": "Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary",
-      "href": "https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015",
-      "date": "2017-01-18",
-      "publisher": "The Caravan",
-      "id": "aadhaar-mandatory"
+    "OBJECTION": {
+      "title": "[/wg/fedid] Formal Objection (charter review)",
+      "href": "https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html",
+      "date": "2024-09-12",
+      "publisher": "W3C",
+      "id": "objection"
+    },
+    "SUPPRESS": {
+      "title": "The \"Segregate-and-Suppress\" Approach to Regulating Child Safety Online",
+      "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208739",
+      "date": "2025-04-08",
+      "authors": [
+        "Eric Goldman"
+      ],
+      "id": "suppress"
     }
   },
-  "publishISODate": "2025-08-26T00:00:00.000Z",
-  "generatedSubtitle": "W3C Draft TAG Finding 26 August 2025"
+  "publishISODate": "2025-08-29T00:00:00.000Z",
+  "generatedSubtitle": "W3C Draft TAG Finding 29 August 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/base.css"></head>
 <body class="informative h-entry"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Preventing Abuse of Digital Credentials</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-08-26">26 August 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#draft-finding">W3C Draft TAG Finding</a> <time class="dt-published" datetime="2025-08-29">29 August 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250826/">https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250826/</a>
+                <a class="u-url" href="https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250829/">https://www.w3.org/2001/tag/doc/draft-finding-web-no-papers-20250829/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/2001/tag/doc/web-no-papers/">https://www.w3.org/2001/tag/doc/web-no-papers/</a>
@@ -229,17 +244,20 @@ doing irreparable harm to individual autonomy online.</p>
 
 
 <p>This is a draft TAG finding and does not yet represent TAG consensus.</p>
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1. </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#finding-summary"><bdi class="secno">2. </bdi>Finding Summary</a></li><li class="tocline"><a class="tocxref" href="#reasons"><bdi class="secno">3. </bdi>Uses for Identity Information</a></li><li class="tocline"><a class="tocxref" href="#tracking"><bdi class="secno">4. </bdi>Tracking with Legal Identity</a></li><li class="tocline"><a class="tocxref" href="#overuse-of-identity"><bdi class="secno">5. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aadhaar"><bdi class="secno">5.1 </bdi>Case Study: Aadhaar</a></li></ol></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">6. </bdi>Exclusion</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#centralization-of-trust"><bdi class="secno">6.1 </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#centralization-of-control"><bdi class="secno">6.2 </bdi>Centralization of Control</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#auth"><bdi class="secno">7.1 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">7.2 </bdi>Multiple National Credentials</a></li><li class="tocline"><a class="tocxref" href="#avoiding-dependence"><bdi class="secno">7.3 </bdi>Avoiding Dependence</a></li></ol></li><li class="tocline"><a class="tocxref" href="#call-to-action"><bdi class="secno">8. </bdi>Call to Action</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1. </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#finding-summary"><bdi class="secno">2. </bdi>Finding Summary</a></li><li class="tocline"><a class="tocxref" href="#reasons"><bdi class="secno">3. </bdi>Uses for Identity Information</a></li><li class="tocline"><a class="tocxref" href="#tracking"><bdi class="secno">4. </bdi>Tracking with Legal Identity</a></li><li class="tocline"><a class="tocxref" href="#overuse-of-identity"><bdi class="secno">5. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aadhaar"><bdi class="secno">5.1 </bdi>Case Study: Aadhaar</a></li><li class="tocline"><a class="tocxref" href="#age"><bdi class="secno">5.2 </bdi>Age Verification</a></li></ol></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">6. </bdi>Exclusion</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#centralization-of-trust"><bdi class="secno">6.1 </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#centralization-of-control"><bdi class="secno">6.2 </bdi>Centralization of Control</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">7. </bdi>Use Cases and Technical Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#auth-use"><bdi class="secno">7.1 </bdi>Authorizing Use</a></li><li class="tocline"><a class="tocxref" href="#auth"><bdi class="secno">7.2 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">7.3 </bdi>Multiple National Credentials</a></li><li class="tocline"><a class="tocxref" href="#avoiding-dependence"><bdi class="secno">7.4 </bdi>Avoiding Dependence</a></li></ol></li><li class="tocline"><a class="tocxref" href="#call-to-action"><bdi class="secno">8. </bdi>Call to Action</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 <section id="background"><div class="header-wrapper"><h2 id="x1-background"><bdi class="secno">1. </bdi>Background</h2><a class="self-link" href="#background" aria-label="Permalink for Section 1."></a></div>
 <p>APIs that facilitate access to verifiable claims about identity,
 such as the proposed <a href="https://wicg.github.io/digital-credentials/">Digital Credentials API</a>,
 are starting to be developed and deployed.
 A large number of jurisdictions are starting
-to create digital identity systems for their citizens.
-The <a href="https://www.w3.org/2025/02/wg-fedid.html">Federated Identity Working Group</a>
+to create digital identity systems for their citizens.</p>
+<p>The <a href="https://www.w3.org/2025/02/wg-fedid.html">Federated Identity Working Group</a>
 includes an API for accessing these systems
-as a chartered deliverable.</p>
+as a chartered deliverable.
+This API follows a three-party model
+where the primary actors are the <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model/#dfn-issuers">issuer</a>, <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model/#dfn-holders">holder</a>, and <a data-link-type="dfn" href="https://www.w3.org/TR/vc-data-model/#dfn-verifier">verifier</a>;
+as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-vc-data-model-2.0" title="Verifiable Credentials Data Model v2.0">VC-DATA-MODEL-2.0</a></cite>].</p>
 <p>Digital identity APIs provide a convenient way
 for websites to access proof of legal identity.
 This convenience leads to a range of implications for privacy,
@@ -366,7 +384,7 @@ choose to take advantage of reduced friction to make a request.</p>
 <p>Though increasing friction might not be worthwhile,
 other mechanisms might be used to disincentivise requests for legal identity.
 A method that might alter the costs for site operators
-is described in <a href="#auth" data-matched-text="[[[#auth]]]" class="sec-ref"><bdi class="secno">7.1 </bdi>Authorizing Sites</a>.</p>
+is described in <a href="#auth" data-matched-text="[[[#auth]]]" class="sec-ref"><bdi class="secno">7.2 </bdi>Authorizing Sites</a>.</p>
 <p>Normalizing the practice of providing identity credentials to websites
 risks serious harm.
 Providing any form of external identity information needs to be an exceptional process.</p>
@@ -403,8 +421,22 @@ This further highlights the need for accountability,
 but also demonstrates that there are strong incentives
 that motivate the use of legal identity where it is available.
 Privacy therefore depends on having an equivalently strong countervailing force.</p>
-</section></section><section id="exclusion"><div class="header-wrapper"><h2 id="x6-exclusion"><bdi class="secno">6. </bdi>Exclusion</h2><a class="self-link" href="#exclusion" aria-label="Permalink for Section 6."></a></div>
-<p>Online services that have <a href="https://en.wikipedia.org/wiki/Real-name_system">real-name policies</a>
+</section><section id="age-verification"><div class="header-wrapper"><h3 id="age"><bdi class="secno">5.2 </bdi>Age Verification</h3><a class="self-link" href="#age" aria-label="Permalink for Section 5.2"></a></div><p>A number of governments have chosen to mandate the use of age verification
+for access to certain online services.
+The TAG is not confident that age verification is even appropriate ([<cite><a class="bibref" data-link-type="biblio" href="#bib-suppress" title="The &quot;Segregate-and-Suppress&quot; Approach to Regulating Child Safety Online">SUPPRESS</a></cite>]),
+but we are waiting for the outcome of the upcoming [<cite><a class="bibref" data-link-type="biblio" href="#bib-age-ws" title="IAB/W3C Workshop on Age-Based Restrictions on Content Access">AGE-WS</a></cite>] workshop
+before taking a firm position.</p>
+<p>Different jurisdictions vary in how they require age verification,
+but a common theme is to place the responsibility on the service provider
+(the website, in the web's context).
+The presentation of government-issued credentials
+is often recognized as an acceptable age verification method;
+in other cases, government credentials are one of a set of acceptable methods.</p>
+<p>Even if privacy concerns around surveillance are mitigated,
+the use of credentials in this setting creates another way in which
+people might become accustomed to providing their identity documents.
+Use of credentials for age verification therefore leads to credential overuse.</p>
+</section></section><section id="exclusion-0"><div class="header-wrapper"><h2 id="exclusion"><bdi class="secno">6. </bdi>Exclusion</h2><a class="self-link" href="#exclusion" aria-label="Permalink for Section 6."></a></div><p>Online services that have <a href="https://en.wikipedia.org/wiki/Real-name_system">real-name policies</a>
 are justifiably controversial.
 The use of legal identity provides very different social dynamics
 when compared with <a href="https://www.eff.org/deeplinks/2011/07/case-pseudonyms">pseudonymous</a>
@@ -521,7 +553,18 @@ Developing the necessary understanding of different uses of new technology —
 and then evolving norms to handle those situations —
 is not something that can be rushed.
 <a href="https://developer.apple.com/videos/play/wwdc2025/232/">Deployment</a> <a href="https://developer.chrome.com/blog/digital-credentials-api-origin-trial">is</a>.</p>
-<section id="authorizing-sites"><div class="header-wrapper"><h3 id="auth"><bdi class="secno">7.1 </bdi>Authorizing Sites</h3><a class="self-link" href="#auth" aria-label="Permalink for Section 7.1"></a></div><p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
+<section id="authorizing-use"><div class="header-wrapper"><h3 id="auth-use"><bdi class="secno">7.1 </bdi>Authorizing Use</h3><a class="self-link" href="#auth-use" aria-label="Permalink for Section 7.1"></a></div><p>Many uses of digital credentials will rely on asking people to make a decision
+about whether to authorize the use of the credential.</p>
+<p>User agents need to help their users understand what information is disclosed
+to enable an informed choice.
+It is challenging to design a system
+that can accurately and comprehensibly convey the details
+of what people are being asked to approve
+given the potential diversity of uses.
+Communicating the implications can be particularly difficult
+when credentials are linkable
+or reveal metadata, such as the issuer identity.</p>
+</section><section id="authorizing-sites"><div class="header-wrapper"><h3 id="auth"><bdi class="secno">7.2 </bdi>Authorizing Sites</h3><a class="self-link" href="#auth" aria-label="Permalink for Section 7.2"></a></div><p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
 envisions not only the issuance of digital credentials to individuals,
 but also the explicit authorization of businesses and service providers that will request those credentials.</p>
 <p>These business or government entities (known as "relying parties")
@@ -535,7 +578,7 @@ and that their ability to do so is constrained, transparent, and subject to over
 <p>relying parties should provide information regarding the data that they will request,
 if any, in order to provide their services and the reason for the request.</p>
 </blockquote>
-<p>Transparency contributes to accountability
+<p>Verifiable transparency mechanisms contribute to accountability
 by making it possible for users to understand who is asking for what,
 and under what legal authority.
 This safeguard mitigates against some of the risks associated with digital credentials.
@@ -545,7 +588,7 @@ user control, and the risk of such mechanisms becoming normalized across the web
 Nevertheless, we recommend that the specification authors
 look to such mechanisms as a guide for mitigating
 potential harms in this area.</p>
-</section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x7-2-multiple-national-credentials"><bdi class="secno">7.2 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 7.2"></a></div>
+</section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x7-3-multiple-national-credentials"><bdi class="secno">7.3 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 7.3"></a></div>
 <p>Individuals with more than one nationality, when traveling across international borders,
 have the choice of which credential (passport) to assert.
 For example, a person is generally required to present a passport
@@ -560,7 +603,7 @@ should not behave any differently.
 It's vital that national authorities are not able to query or enumerate what
 credentials may exist and equally important that end users remain in control
 of what information is provided.</p>
-</section><section id="avoiding-dependence"><div class="header-wrapper"><h3 id="x7-3-avoiding-dependence"><bdi class="secno">7.3 </bdi>Avoiding Dependence</h3><a class="self-link" href="#avoiding-dependence" aria-label="Permalink for Section 7.3"></a></div>
+</section><section id="avoiding-dependence"><div class="header-wrapper"><h3 id="x7-4-avoiding-dependence"><bdi class="secno">7.4 </bdi>Avoiding Dependence</h3><a class="self-link" href="#avoiding-dependence" aria-label="Permalink for Section 7.4"></a></div>
 <p>Any credential system needs to carefully consider
 what might happen if someone is unable to authenticate or they refuse to.</p>
 <p>A protection that might protect people who cannot provide a credential,
@@ -586,6 +629,8 @@ We can think of no area of current work where this is more important.</p>
     
     <dl class="bibliography"><dt id="bib-aadhaar-mandatory">[AADHAAR-MANDATORY]</dt><dd>
       <a href="https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015"><cite>Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary</cite></a>.  The Caravan. 2017-01-18. URL: <a href="https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015">https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015</a>
+    </dd><dt id="bib-age-ws">[AGE-WS]</dt><dd>
+      <a href="https://datatracker.ietf.org/group/agews/about/"><cite>IAB/W3C Workshop on Age-Based Restrictions on Content Access</cite></a>. 2025-07-15. URL: <a href="https://datatracker.ietf.org/group/agews/about/">https://datatracker.ietf.org/group/agews/about/</a>
     </dd><dt id="bib-council-report">[COUNCIL-REPORT]</dt><dd>
       <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html"><cite>W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API</cite></a>. 2025-02-20. URL: <a href="https://www.w3.org/2025/02/council-report-fedid-dig-cred.html">https://www.w3.org/2025/02/council-report-fedid-dig-cred.html</a>
     </dd><dt id="bib-ethical-web-principles">[ETHICAL-WEB-PRINCIPLES]</dt><dd>
@@ -594,6 +639,12 @@ We can think of no area of current work where this is more important.</p>
       <a href="https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html"><cite>[/wg/fedid] Formal Objection (charter review)</cite></a>.  W3C. 2024-09-12. URL: <a href="https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html">https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html</a>
     </dd><dt id="bib-privacy-principles">[PRIVACY-PRINCIPLES]</dt><dd>
       <a href="https://www.w3.org/TR/privacy-principles/"><cite>Privacy Principles</cite></a>. Robin Berjon; Jeffrey Yasskin.  W3C. 15 May 2025. STMT. URL: <a href="https://www.w3.org/TR/privacy-principles/">https://www.w3.org/TR/privacy-principles/</a>
+    </dd><dt id="bib-suppress">[SUPPRESS]</dt><dd>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208739"><cite>The "Segregate-and-Suppress" Approach to Regulating Child Safety Online</cite></a>. Eric Goldman. 2025-04-08. URL: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208739">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208739</a>
+    </dd><dt id="bib-vc-data-model">[vc-data-model]</dt><dd>
+      <a href="https://www.w3.org/TR/vc-data-model/"><cite>Verifiable Credentials Data Model v1.1</cite></a>. Manu Sporny; Grant Noble; Dave Longley; Daniel Burnett; Brent Zundel; Kyle Den Hartog.  W3C. 3 March 2022. W3C Recommendation. URL: <a href="https://www.w3.org/TR/vc-data-model/">https://www.w3.org/TR/vc-data-model/</a>
+    </dd><dt id="bib-vc-data-model-2.0">[VC-DATA-MODEL-2.0]</dt><dd>
+      <a href="https://www.w3.org/TR/vc-data-model-2.0/"><cite>Verifiable Credentials Data Model v2.0</cite></a>. Ivan Herman; Michael Jones; Manu Sporny; Ted Thibodeau Jr; Gabe Cohen.  W3C. 15 May 2025. W3C Recommendation. URL: <a href="https://www.w3.org/TR/vc-data-model-2.0/">https://www.w3.org/TR/vc-data-model-2.0/</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
