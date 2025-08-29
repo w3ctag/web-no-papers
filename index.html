@@ -96,13 +96,13 @@ A large number of jurisdictions are starting
 to create digital identity systems for their citizens.
 
 The [Federated Identity Working Group](https://www.w3.org/2025/02/wg-fedid.html)
-includes an API for accessing these systems
+includes an API for issuing and present digital credentials
 as a chartered deliverable.
 This API follows a three-party model
 where the primary actors are the [=issuer=], [=holder=], and [=verifier=];
 as defined in [[VC-DATA-MODEL-2.0]].
 
-Digital identity APIs provide a convenient way
+Digital credential APIs provide a convenient way
 for websites to access proof of legal identity.
 This convenience leads to a range of implications for privacy,
 as noted in a recent objection
@@ -127,6 +127,8 @@ The report produced by the W3C Council [[COUNCIL-REPORT]]
 also acknowledged these problems
 and [recommended](https://www.w3.org/2025/02/council-report-fedid-dig-cred.html#x1-recommendations)
 that these concerns be addressed in the work of the Working Group.
+This document provides a more thorough exploration
+of these issues.
 
 
 ## Finding Summary
@@ -145,14 +147,19 @@ plays an essential role
 in mediating these types of requests
 and ensuring that people have agency.
 
-The web should not become a platform that demands your government-issued identity documents
+The web should not become a platform that demands identity documents
 in the course of its normal operation.
-Use of such credentials should be exceptional,
+Use of credentials should be exceptional,
 only when required,
 and always on a person's own terms.
 
 The TAG therefore encourages contributors
 to pay special attention to the societal impact of digital credentials.
+Positive changes cannot be limited to raising awareness of risks
+and trade-offs that arise from designs.
+The design of systems can affect how they operate
+in ways that has a meaningful impact on how people live.
+Designs that empower people can help reduce the potential for harm.
 
 
 ## Uses for Identity Information {#reasons}
