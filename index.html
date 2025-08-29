@@ -26,23 +26,33 @@ var respecConfig = {
   github: "w3ctag/web-no-papers",
   format: "markdown",
   localBiblio: {
-    "OBJECTION": {
-      title: "[/wg/fedid] Formal Objection (charter review)",
-      href: "https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html",
-      date: "2024-09-12",
-      publisher: "W3C",
+    "AADHAAR-MANDATORY": {
+      title: "Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary",
+      href: "https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015",
+      date: "2017-01-18",
+      publisher: "The Caravan",
+    },
+    "AGE-WS": {
+      title: "IAB/W3C Workshop on Age-Based Restrictions on Content Access",
+      href: "https://datatracker.ietf.org/group/agews/about/",
+      date: "2025-07-15",
     },
     "COUNCIL-REPORT": {
       title: "W3C Council Report on the Formal Objection Against Federated Identity Working Group Charter — Adding Digital Credentials API",
       href: "https://www.w3.org/2025/02/council-report-fedid-dig-cred.html",
       date: "2025-02-20",
     },
-
-    "AADHAAR-MANDATORY": {
-      title: "Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary",
-      href: "https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015",
-      date: "2017-01-18",
-      publisher: "The Caravan",
+    "OBJECTION": {
+      title: "[/wg/fedid] Formal Objection (charter review)",
+      href: "https://lists.w3.org/Archives/Public/public-review-comments/2024Sep/0017.html",
+      date: "2024-09-12",
+      publisher: "W3C",
+    },
+    "SUPPRESS": {
+      title: "The \"Segregate-and-Suppress\" Approach to Regulating Child Safety Online",
+      href: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5208739",
+      date: "2025-04-08",
+      authors: ["Eric Goldman"],
     },
   },
 };
@@ -286,7 +296,28 @@ that motivate the use of legal identity where it is available.
 Privacy therefore depends on having an equivalently strong countervailing force.
 
 
-## Exclusion
+### Age Verification {#age}
+
+A number of governments have chosen to mandate the use of age verification
+for access to certain online services.
+The TAG is not confident that age verification is even appropriate ([[SUPPRESS]]),
+but we are waiting for the outcome of the upcoming [[AGE-WS]] workshop
+before taking a firm position.
+
+Different jurisdictions vary in how they require age verification,
+but a common theme is to place the responsibility on the service provider
+(the website, in the web's context).
+The presentation of government-issued credentials
+is often recognized as an acceptable age verification method;
+in other cases, government credentials are one of a set of acceptable methods.
+
+Even if privacy concerns around surveillance are mitigated,
+the use of credentials in this setting creates another way in which
+people might become accustomed to providing their identity documents.
+Use of credentials for age verification therefore leads to credential overuse.
+
+
+## Exclusion {#exclusion}
 
 Online services that have [real-name policies](https://en.wikipedia.org/wiki/Real-name_system)
 are justifiably controversial.
@@ -427,6 +458,22 @@ Developing the necessary understanding of different uses of new technology &mdas
 and then evolving norms to handle those situations &mdash;
 is not something that can be rushed.
 [Deployment](https://developer.apple.com/videos/play/wwdc2025/232/) [is](https://developer.chrome.com/blog/digital-credentials-api-origin-trial).
+
+
+### Authorizing Use {#auth-use}
+
+Many uses of digital credentials will rely on asking people to make a decision
+about whether to authorize the use of the credential.
+
+User agents need to help their users understand what information is disclosed
+to enable an informed choice.
+It is challenging to design a system
+that can accurately and comprehensibly convey the details
+of what people are being asked to approve
+given the potential diversity of uses.
+Communicating the implications can be particularly difficult
+when credentials are linkable
+or reveal metadata, such as the issuer identity.
 
 
 ### Authorizing Sites {#auth}
