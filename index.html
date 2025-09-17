@@ -133,6 +133,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "github": "w3ctag/web-no-papers",
   "format": "markdown",
   "localBiblio": {
+    "AADHAAR-BANKS": {
+      "title": "Is It Legal for Banks to Refuse to Open an Account Without Aadhaar?",
+      "href": "https://legal60.com/is-it-legal-for-banks-to-refuse-to-open-an-account-without-aadhaar/#:~:text=in%20practice%2C%20it%20became%20widely%20used%20for%20opening%20bank%20accounts%2C%20filing%20taxes%2C%20and%20accessing%20other%20essential%20services",
+      "date": "2025-07-05",
+      "publisher": "Legal 60",
+      "id": "aadhaar-banks"
+    },
     "AADHAAR-MANDATORY": {
       "title": "Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary",
       "href": "https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015",
@@ -303,7 +310,7 @@ doing irreparable harm to individual autonomy online.</p>
 
 
 <p>This is a draft TAG finding and does not yet represent TAG consensus.</p>
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1. </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#finding-summary"><bdi class="secno">2. </bdi>Finding Summary</a></li><li class="tocline"><a class="tocxref" href="#reasons"><bdi class="secno">3. </bdi>Uses for Identity Information</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tracking"><bdi class="secno">3.1 </bdi>Tracking with Legal Identity</a></li><li class="tocline"><a class="tocxref" href="#tracking-cred"><bdi class="secno">3.2 </bdi>Tracking Inherent to Credential Formats</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overuse"><bdi class="secno">4. </bdi>Overuse of Identity</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aadhaar"><bdi class="secno">4.1 </bdi>Case Study: Aadhaar</a></li><li class="tocline"><a class="tocxref" href="#age"><bdi class="secno">4.2 </bdi>Age Verification</a></li></ol></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">5. </bdi>Exclusion</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#central-trust"><bdi class="secno">5.1 </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#centralization-of-control"><bdi class="secno">5.2 </bdi>Centralization of Control</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">6. </bdi>Use Cases and Technical Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#auth-use"><bdi class="secno">6.1 </bdi>Authorizing Use</a></li><li class="tocline"><a class="tocxref" href="#auth"><bdi class="secno">6.2 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#improving-inclusion"><bdi class="secno">6.3 </bdi>Improving Inclusion</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">6.4 </bdi>Multiple National Credentials</a></li><li class="tocline"><a class="tocxref" href="#avoiding-dependence"><bdi class="secno">6.5 </bdi>Avoiding Dependence</a></li><li class="tocline"><a class="tocxref" href="#wallets-as-an-emerging-class-of-user-agent"><bdi class="secno">6.6 </bdi>Wallets as an Emerging Class of User Agent</a></li></ol></li><li class="tocline"><a class="tocxref" href="#call-to-action"><bdi class="secno">7. </bdi>Call to Action</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#background"><bdi class="secno">1. </bdi>Background</a></li><li class="tocline"><a class="tocxref" href="#finding-summary"><bdi class="secno">2. </bdi>Finding Summary</a></li><li class="tocline"><a class="tocxref" href="#reasons"><bdi class="secno">3. </bdi>Abuse of Identity Information</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#tracking"><bdi class="secno">3.1 </bdi>Tracking with Legal Identity</a></li><li class="tocline"><a class="tocxref" href="#tracking-cred"><bdi class="secno">3.2 </bdi>Tracking Inherent to Credential Formats</a></li><li class="tocline"><a class="tocxref" href="#overuse"><bdi class="secno">3.3 </bdi>Overuse of Identity</a></li><li class="tocline"><a class="tocxref" href="#aadhaar"><bdi class="secno">3.4 </bdi>Case Study: Aadhaar</a></li><li class="tocline"><a class="tocxref" href="#age"><bdi class="secno">3.5 </bdi>Age Verification</a></li></ol></li><li class="tocline"><a class="tocxref" href="#exclusion"><bdi class="secno">4. </bdi>Exclusion</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#central-trust"><bdi class="secno">4.1 </bdi>Centralization of Trust</a></li><li class="tocline"><a class="tocxref" href="#centralization-of-control"><bdi class="secno">4.2 </bdi>Centralization of Control</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-cases-and-technical-options"><bdi class="secno">5. </bdi>Use Cases and Technical Options</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#auth-use"><bdi class="secno">5.1 </bdi>Authorizing Use</a></li><li class="tocline"><a class="tocxref" href="#auth"><bdi class="secno">5.2 </bdi>Authorizing Sites</a></li><li class="tocline"><a class="tocxref" href="#improving-inclusion"><bdi class="secno">5.3 </bdi>Improving Inclusion</a></li><li class="tocline"><a class="tocxref" href="#multiple-national-credentials"><bdi class="secno">5.4 </bdi>Multiple National Credentials</a></li><li class="tocline"><a class="tocxref" href="#avoiding-dependence"><bdi class="secno">5.5 </bdi>Avoiding Dependence</a></li><li class="tocline"><a class="tocxref" href="#wallets-as-an-emerging-class-of-user-agent"><bdi class="secno">5.6 </bdi>Wallets as an Emerging Class of User Agent</a></li></ol></li><li class="tocline"><a class="tocxref" href="#call-to-action"><bdi class="secno">6. </bdi>Call to Action</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.1 </bdi>Informative references</a></li></ol></li></ol></nav>
 
 <section id="background"><div class="header-wrapper"><h2 id="x1-background"><bdi class="secno">1. </bdi>Background</h2><a class="self-link" href="#background" aria-label="Permalink for Section 1."></a></div>
 <p>APIs that facilitate access to verifiable claims about identity,
@@ -368,7 +375,7 @@ and trade-offs that arise from designs.
 The design of systems can affect how they operate
 in ways that has a meaningful impact on how people live.
 Designs that empower people can help reduce the potential for harm.</p>
-</section><section id="uses-for-identity-information"><div class="header-wrapper"><h2 id="reasons"><bdi class="secno">3. </bdi>Uses for Identity Information</h2><a class="self-link" href="#reasons" aria-label="Permalink for Section 3."></a></div><p>There are multiple reasons that a site might seek to ask for proof of legal identity.
+</section><section id="abuse-of-identity-information"><div class="header-wrapper"><h2 id="reasons"><bdi class="secno">3. </bdi>Abuse of Identity Information</h2><a class="self-link" href="#reasons" aria-label="Permalink for Section 3."></a></div><p>There are multiple reasons that a site might seek to ask for proof of legal identity.
 Often, there are multiple reasons that a site seeks to identify a visitor.</p>
 <p>Motivations that tend to produce user-beneficial outcomes include:</p>
 <ul>
@@ -460,7 +467,7 @@ or other information that might obviously enable tracking.</p>
 Zero-knowledge systems create fresh challenges,
 such as a greater risk of people being able to share credentials
 or proofs being forgeable if a cryptographically-relevant quantum computer is developed.</p>
-</section></section><section id="overuse-of-identity"><div class="header-wrapper"><h2 id="overuse"><bdi class="secno">4. </bdi>Overuse of Identity</h2><a class="self-link" href="#overuse" aria-label="Permalink for Section 4."></a></div><p>Legal mandates to use official documentation is not new.
+</section><section id="overuse-of-identity"><div class="header-wrapper"><h3 id="overuse"><bdi class="secno">3.3 </bdi>Overuse of Identity</h3><a class="self-link" href="#overuse" aria-label="Permalink for Section 3.3"></a></div><p>Legal mandates to use official documentation is not new.
 The use of government credentials
 to conduct business with governments
 or where business comes with obligations to governments is not new.
@@ -476,14 +483,14 @@ choose to take advantage of reduced friction to make a request.</p>
 <p>Though increasing friction might not be worthwhile,
 other mechanisms might be used to disincentivise requests for legal identity.
 A method that might alter the costs for site operators in other ways
-is described in <a href="#auth" data-matched-text="[[[#auth]]]" class="sec-ref"><bdi class="secno">6.2 </bdi>Authorizing Sites</a>.</p>
+is described in <a href="#auth" data-matched-text="[[[#auth]]]" class="sec-ref"><bdi class="secno">5.2 </bdi>Authorizing Sites</a>.</p>
 <p>Normalizing the practice of providing identity credentials to websites
 risks serious harm.
 Providing any form of external identity information needs to be an exceptional process.</p>
 <p>For example, it is entirely inappropriate to use government-issued credentials
 as a login credential,
 even if credentials are used during account creation.</p>
-<section id="case-study-aadhaar"><div class="header-wrapper"><h3 id="aadhaar"><bdi class="secno">4.1 </bdi>Case Study: Aadhaar</h3><a class="self-link" href="#aadhaar" aria-label="Permalink for Section 4.1"></a></div><p>In India,
+</section><section id="case-study-aadhaar"><div class="header-wrapper"><h3 id="aadhaar"><bdi class="secno">3.4 </bdi>Case Study: Aadhaar</h3><a class="self-link" href="#aadhaar" aria-label="Permalink for Section 3.4"></a></div><p>In India,
 the <a href="https://uidai.gov.in/">Aadhaar</a> national identity scheme
 was introduced as a way to better enable access to government services,
 like health, welfare, and food assistance.
@@ -503,14 +510,14 @@ which links fingerprints and iris scans to name and other personal details.</p>
 <p>Despite Aadhar use being optional in law,
 even prior to this change,
 refusals to do business were widespread in employment
-and other non-government interactions.
+and other non-government interactions [<cite><a class="bibref" data-link-type="biblio" href="#bib-aadhaar-banks" title="Is It Legal for Banks to Refuse to Open an Account Without Aadhaar?">AADHAAR-BANKS</a></cite>].
 A number of government services soon
 made Aadhaar use mandatory [<cite><a class="bibref" data-link-type="biblio" href="#bib-aadhaar-mandatory" title="Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary">AADHAAR-MANDATORY</a></cite>].
 This further highlights the need for accountability,
 but also demonstrates that there are strong incentives
 that motivate the use of legal identity where it is available.
 Privacy therefore depends on having an equivalently strong countervailing force.</p>
-</section><section id="age-verification"><div class="header-wrapper"><h3 id="age"><bdi class="secno">4.2 </bdi>Age Verification</h3><a class="self-link" href="#age" aria-label="Permalink for Section 4.2"></a></div><p>A number of governments have chosen to mandate the use of age verification
+</section><section id="age-verification"><div class="header-wrapper"><h3 id="age"><bdi class="secno">3.5 </bdi>Age Verification</h3><a class="self-link" href="#age" aria-label="Permalink for Section 3.5"></a></div><p>A number of governments have chosen to mandate the use of age verification
 for access to certain online services.
 The TAG is not confident that age verification is even appropriate ([<cite><a class="bibref" data-link-type="biblio" href="#bib-suppress" title="The &quot;Segregate-and-Suppress&quot; Approach to Regulating Child Safety Online">SUPPRESS</a></cite>]),
 but we are waiting for the outcome of the upcoming [<cite><a class="bibref" data-link-type="biblio" href="#bib-age-ws" title="IAB/W3C Workshop on Age-Based Restrictions on Content Access">AGE-WS</a></cite>] workshop
@@ -525,7 +532,7 @@ in other cases, government credentials are one of a set of acceptable methods.</
 (see <a href="#tracking" data-matched-text="[[[#tracking]]]" class="sec-ref"><bdi class="secno">3.1 </bdi>Tracking with Legal Identity</a> and <a href="#tracking-cred" data-matched-text="[[[#tracking-cred]]]" class="sec-ref"><bdi class="secno">3.2 </bdi>Tracking Inherent to Credential Formats</a>),
 the use of credentials in this setting creates another way in which
 people might become accustomed to providing their identity documents.</p>
-</section></section><section id="exclusion-0"><div class="header-wrapper"><h2 id="exclusion"><bdi class="secno">5. </bdi>Exclusion</h2><a class="self-link" href="#exclusion" aria-label="Permalink for Section 5."></a></div><p>Online services that have <a href="https://en.wikipedia.org/wiki/Real-name_system">real-name policies</a>
+</section></section><section id="exclusion-0"><div class="header-wrapper"><h2 id="exclusion"><bdi class="secno">4. </bdi>Exclusion</h2><a class="self-link" href="#exclusion" aria-label="Permalink for Section 4."></a></div><p>Online services that have <a href="https://en.wikipedia.org/wiki/Real-name_system">real-name policies</a>
 are justifiably controversial.
 The use of legal identity provides very different social dynamics
 when compared with <a href="https://www.eff.org/deeplinks/2011/07/case-pseudonyms">pseudonymous</a>
@@ -549,7 +556,7 @@ can be abused by attackers
 to forcibly exclude people.</li>
 </ul>
 <p>In some cases,
-such as Aadhaar (<a href="#aadhaar" data-matched-text="[[[#aadhaar]]]" class="sec-ref"><bdi class="secno">4.1 </bdi>Case Study: Aadhaar</a>),
+such as Aadhaar (<a href="#aadhaar" data-matched-text="[[[#aadhaar]]]" class="sec-ref"><bdi class="secno">3.4 </bdi>Case Study: Aadhaar</a>),
 laws could recognize the risk that people might not be able to present a credential
 and forbid discrimination against those who do not.
 However, what matters is whether refusal is respected in practice.</p>
@@ -561,7 +568,7 @@ based on their refusal or inability to provide a digital credential.
 This is aligned with such principles
 as <a href="https://www.w3.org/TR/design-principles/#do-not-expose-use-of-assistive-tech">not revealing when assistive technologies are in use</a>
 or <a href="https://www.w3.org/TR/privacy-principles/#non-retaliation">non-retaliation</a>.</p>
-<section id="centralization-of-trust"><div class="header-wrapper"><h3 id="central-trust"><bdi class="secno">5.1 </bdi>Centralization of Trust</h3><a class="self-link" href="#central-trust" aria-label="Permalink for Section 5.1"></a></div><p>Any website that requests legal identifiers
+<section id="centralization-of-trust"><div class="header-wrapper"><h3 id="central-trust"><bdi class="secno">4.1 </bdi>Centralization of Trust</h3><a class="self-link" href="#central-trust" aria-label="Permalink for Section 4.1"></a></div><p>Any website that requests legal identifiers
 needs to decide which legal identities it accepts.
 The easiest way to do this is to trust the issuers of credentials
 that are most-used among visitors
@@ -582,7 +589,7 @@ may not be able to — or may not feel safe to — use credentials
 from their country of origin.
 Especially where major platforms only recognize a narrow set of issuers,
 or only recognize issuers tied to a specific jurisdiction.</p>
-</section><section id="centralization-of-control"><div class="header-wrapper"><h3 id="x5-2-centralization-of-control"><bdi class="secno">5.2 </bdi>Centralization of Control</h3><a class="self-link" href="#centralization-of-control" aria-label="Permalink for Section 5.2"></a></div>
+</section><section id="centralization-of-control"><div class="header-wrapper"><h3 id="x4-2-centralization-of-control"><bdi class="secno">4.2 </bdi>Centralization of Control</h3><a class="self-link" href="#centralization-of-control" aria-label="Permalink for Section 4.2"></a></div>
 <p>The implementation of identity verification is complex.
 Sites might choose to delegate to external services to manage the process.</p>
 <p>It is possible that a limited number of service providers
@@ -602,8 +609,8 @@ and <a href="https://pressspacetojump.com/feature/on-itch-io-payment-processors-
 reduce this risk of capture.
 Designing systems and standards to minimize any structural bias
 that might lead to market consolidation is better.</p>
-</section></section><section id="use-cases-and-technical-options"><div class="header-wrapper"><h2 id="x6-use-cases-and-technical-options"><bdi class="secno">6. </bdi>Use Cases and Technical Options</h2><a class="self-link" href="#use-cases-and-technical-options" aria-label="Permalink for Section 6."></a></div>
-<p>Sites seek to obtain and use identity for multiple reasons; see <a href="#reasons" data-matched-text="[[[#reasons]]]" class="sec-ref"><bdi class="secno">3. </bdi>Uses for Identity Information</a>.
+</section></section><section id="use-cases-and-technical-options"><div class="header-wrapper"><h2 id="x5-use-cases-and-technical-options"><bdi class="secno">5. </bdi>Use Cases and Technical Options</h2><a class="self-link" href="#use-cases-and-technical-options" aria-label="Permalink for Section 5."></a></div>
+<p>Sites seek to obtain and use identity for multiple reasons; see <a href="#reasons" data-matched-text="[[[#reasons]]]" class="sec-ref"><bdi class="secno">3. </bdi>Abuse of Identity Information</a>.
 While the universality of a generic solution is appealing,
 each use case might require a different type of solution.
 Different solutions can have dramatically different privacy characteristics.</p>
@@ -629,9 +636,9 @@ this is challenging,
 because such APIs need to serve a range of purposes.</p>
 <p>The suggestions in the following sections address common issues.
 There are some use cases —
-such as age-based restrictions on content access (see <a href="#age" data-matched-text="[[[#age]]]" class="sec-ref"><bdi class="secno">4.2 </bdi>Age Verification</a>) —
+such as age-based restrictions on content access (see <a href="#age" data-matched-text="[[[#age]]]" class="sec-ref"><bdi class="secno">3.5 </bdi>Age Verification</a>) —
 that might benefit from a wholly different approach.</p>
-<section id="authorizing-use"><div class="header-wrapper"><h3 id="auth-use"><bdi class="secno">6.1 </bdi>Authorizing Use</h3><a class="self-link" href="#auth-use" aria-label="Permalink for Section 6.1"></a></div><p>Many uses of digital credentials will rely on asking people to make a decision
+<section id="authorizing-use"><div class="header-wrapper"><h3 id="auth-use"><bdi class="secno">5.1 </bdi>Authorizing Use</h3><a class="self-link" href="#auth-use" aria-label="Permalink for Section 5.1"></a></div><p>Many uses of digital credentials will rely on asking people to make a decision
 about whether to authorize the use of the credential.</p>
 <p>User agents need to help their users understand what information is disclosed
 to enable an informed choice.
@@ -649,7 +656,7 @@ Developing the necessary understanding of different uses of new technology —
 and then evolving norms to handle those situations —
 is not something that can be rushed.
 <a href="https://developer.apple.com/videos/play/wwdc2025/232/">Deployment</a> <a href="https://developer.chrome.com/blog/digital-credentials-api-origin-trial">is</a>.</p>
-</section><section id="authorizing-sites"><div class="header-wrapper"><h3 id="auth"><bdi class="secno">6.2 </bdi>Authorizing Sites</h3><a class="self-link" href="#auth" aria-label="Permalink for Section 6.2"></a></div><p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
+</section><section id="authorizing-sites"><div class="header-wrapper"><h3 id="auth"><bdi class="secno">5.2 </bdi>Authorizing Sites</h3><a class="self-link" href="#auth" aria-label="Permalink for Section 5.2"></a></div><p>The architecture specified in the European Union’s <a href="https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html">digital identity eIDAS regulation</a>
 envisions not only the issuance of digital credentials to individuals,
 but also the explicit authorization of the businesses and service providers
 who request those credentials.</p>
@@ -670,12 +677,12 @@ and under what legal authority.
 This safeguard mitigates against some of the risks associated with digital credentials.</p>
 <p>Transparency depends on people who review use
 for proportionality, user control, and other risks,
-especially overuse (<a href="#overuse" data-matched-text="[[[#overuse]]]" class="sec-ref"><bdi class="secno">4. </bdi>Overuse of Identity</a>).
+especially overuse (<a href="#overuse" data-matched-text="[[[#overuse]]]" class="sec-ref"><bdi class="secno">3.3 </bdi>Overuse of Identity</a>).
 Nevertheless, we recommend that the specification authors
 look to such mechanisms as a guide for mitigating risk of overuse.</p>
-</section><section id="improving-inclusion"><div class="header-wrapper"><h3 id="x6-3-improving-inclusion"><bdi class="secno">6.3 </bdi>Improving Inclusion</h3><a class="self-link" href="#improving-inclusion" aria-label="Permalink for Section 6.3"></a></div>
+</section><section id="improving-inclusion"><div class="header-wrapper"><h3 id="x5-3-improving-inclusion"><bdi class="secno">5.3 </bdi>Improving Inclusion</h3><a class="self-link" href="#improving-inclusion" aria-label="Permalink for Section 5.3"></a></div>
 <p>The exclusion risk to people
-who might be unable to obtain a credential (see <a href="#central-trust" data-matched-text="[[[#central-trust]]]" class="sec-ref"><bdi class="secno">5.1 </bdi>Centralization of Trust</a>)
+who might be unable to obtain a credential (see <a href="#central-trust" data-matched-text="[[[#central-trust]]]" class="sec-ref"><bdi class="secno">4.1 </bdi>Centralization of Trust</a>)
 is not always a problem that needs to be addressed through system design.
 For instance,
 when interacting with a government
@@ -691,9 +698,9 @@ or <a href="https://www.msf.org/refugees-idps-and-people-move"><abbr title="Méd
 might be recognized as valid issuers
 for cases that do not include a need to identify an issuer.
 This might include credentials that include claims about inherent traits of a person,
-such as their name, appearance, age (<a href="#age-verification" data-matched-text="[[[#age-verification]]]" class="sec-ref"><bdi class="secno">4.2 </bdi>Age Verification</a>),
+such as their name, appearance, age (<a href="#age-verification" data-matched-text="[[[#age-verification]]]" class="sec-ref"><bdi class="secno">3.5 </bdi>Age Verification</a>),
 or even personhood (<cite><a data-matched-text="[[[PERSONHOOD]]]" href="https://arxiv.org/abs/2408.07892">Personhood credentials: Artificial intelligence and the value of privacy-preserving tools to distinguish who is real online</a></cite>).</p>
-</section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x6-4-multiple-national-credentials"><bdi class="secno">6.4 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 6.4"></a></div>
+</section><section id="multiple-national-credentials"><div class="header-wrapper"><h3 id="x5-4-multiple-national-credentials"><bdi class="secno">5.4 </bdi>Multiple National Credentials</h3><a class="self-link" href="#multiple-national-credentials" aria-label="Permalink for Section 5.4"></a></div>
 <p>Individuals with more than one nationality,
 when traveling across international borders,
 have the choice of which credential (passport) to present.
@@ -711,7 +718,7 @@ it is vital that national authorities are not able to query or enumerate
 what credentials may exist
 and equally important that end users remain in control
 of what information is provided.</p>
-</section><section id="avoiding-dependence"><div class="header-wrapper"><h3 id="x6-5-avoiding-dependence"><bdi class="secno">6.5 </bdi>Avoiding Dependence</h3><a class="self-link" href="#avoiding-dependence" aria-label="Permalink for Section 6.5"></a></div>
+</section><section id="avoiding-dependence"><div class="header-wrapper"><h3 id="x5-5-avoiding-dependence"><bdi class="secno">5.5 </bdi>Avoiding Dependence</h3><a class="self-link" href="#avoiding-dependence" aria-label="Permalink for Section 5.5"></a></div>
 <p>Any credential system needs to carefully consider
 what might happen if someone is unable to authenticate or they refuse to.</p>
 <p>A protection that might protect people who cannot provide a credential,
@@ -724,7 +731,7 @@ and so build systems to handle failures.</p>
 <p>Any choice to induce such failures needs to be balanced
 against the potential for fallback mechanisms
 to be considerably less private.</p>
-</section><section id="wallets-as-an-emerging-class-of-user-agent"><div class="header-wrapper"><h3 id="x6-6-wallets-as-an-emerging-class-of-user-agent"><bdi class="secno">6.6 </bdi>Wallets as an Emerging Class of User Agent</h3><a class="self-link" href="#wallets-as-an-emerging-class-of-user-agent" aria-label="Permalink for Section 6.6"></a></div>
+</section><section id="wallets-as-an-emerging-class-of-user-agent"><div class="header-wrapper"><h3 id="x5-6-wallets-as-an-emerging-class-of-user-agent"><bdi class="secno">5.6 </bdi>Wallets as an Emerging Class of User Agent</h3><a class="self-link" href="#wallets-as-an-emerging-class-of-user-agent" aria-label="Permalink for Section 5.6"></a></div>
 <p>A wallet application acts as its user's agent.
 It tells its user what information is being requested,
 guides them toward making an informed choice about what to present,
@@ -739,7 +746,7 @@ be cautious about how much to trust the wallets.
 Over time, we expect these other UAs to re-evaluate the need for extra safeguards,
 as wallets prove that they can be
 effective advocates for the interests of their users.</p>
-</section></section><section id="call-to-action"><div class="header-wrapper"><h2 id="x7-call-to-action"><bdi class="secno">7. </bdi>Call to Action</h2><a class="self-link" href="#call-to-action" aria-label="Permalink for Section 7."></a></div>
+</section></section><section id="call-to-action"><div class="header-wrapper"><h2 id="x6-call-to-action"><bdi class="secno">6. </bdi>Call to Action</h2><a class="self-link" href="#call-to-action" aria-label="Permalink for Section 6."></a></div>
 <p>The TAG supports the work on digital credentials.
 And we also encourage the groups working in this space to consider all the
 risks associated with these technologies with open eyes, and to develop mitigations
@@ -750,7 +757,9 @@ putting "internationally recognized human rights at the core of the web platform
 We can think of no area of current work where this is more important.</p>
 </section><section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informative-references"><div class="header-wrapper"><h3 id="a-1-informative-references"><bdi class="secno">A.1 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.1"></a></div>
     
-    <dl class="bibliography"><dt id="bib-aadhaar-mandatory">[AADHAAR-MANDATORY]</dt><dd>
+    <dl class="bibliography"><dt id="bib-aadhaar-banks">[AADHAAR-BANKS]</dt><dd>
+      <a href="https://legal60.com/is-it-legal-for-banks-to-refuse-to-open-an-account-without-aadhaar/#:~:text=in%20practice%2C%20it%20became%20widely%20used%20for%20opening%20bank%20accounts%2C%20filing%20taxes%2C%20and%20accessing%20other%20essential%20services"><cite>Is It Legal for Banks to Refuse to Open an Account Without Aadhaar?</cite></a>.  Legal 60. 2025-07-05. URL: <a href="https://legal60.com/is-it-legal-for-banks-to-refuse-to-open-an-account-without-aadhaar/#:~:text=in%20practice%2C%20it%20became%20widely%20used%20for%20opening%20bank%20accounts%2C%20filing%20taxes%2C%20and%20accessing%20other%20essential%20services">https://legal60.com/is-it-legal-for-banks-to-refuse-to-open-an-account-without-aadhaar/#:~:text=in%20practice%2C%20it%20became%20widely%20used%20for%20opening%20bank%20accounts%2C%20filing%20taxes%2C%20and%20accessing%20other%20essential%20services</a>
+    </dd><dt id="bib-aadhaar-mandatory">[AADHAAR-MANDATORY]</dt><dd>
       <a href="https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015"><cite>Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary</cite></a>.  The Caravan. 2017-01-18. URL: <a href="https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015">https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015</a>
     </dd><dt id="bib-aadhaar-verdict">[AADHAAR-VERDICT]</dt><dd>
       <a href="https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf"><cite>WRIT PETITION (CIVIL) NO. 494 OF 2012</cite></a>. DIPAK MISRA; A.K. SIKRI, J.; A.M. KHANWILKAR.  The Supreme Court of India. 2018-09-26. URL: <a href="https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf">https://www.thehindu.com/news/resources/article25048939.ece/binary/AadhaarVerdict.pdf</a>
