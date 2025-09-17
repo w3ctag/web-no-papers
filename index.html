@@ -25,7 +25,13 @@ var respecConfig = {
   wgPublicList: "www-tag",
   github: "w3ctag/web-no-papers",
   format: "markdown",
-  localBiblio: {
+    localBiblio: {
+    "AADHAAR-BANKS": {
+      title: "Is It Legal for Banks to Refuse to Open an Account Without Aadhaar?",
+      href: "https://legal60.com/is-it-legal-for-banks-to-refuse-to-open-an-account-without-aadhaar/#:~:text=in%20practice%2C%20it%20became%20widely%20used%20for%20opening%20bank%20accounts%2C%20filing%20taxes%2C%20and%20accessing%20other%20essential%20services",
+      date: "2025-07-05",
+      publisher: "Legal 60",
+    },
     "AADHAAR-MANDATORY": {
       title: "Ten Things For Which Aadhaar Was Made Mandatory Even After an October 2015 Supreme Court Order to the Contrary",
       href: "https://caravanmagazine.in/vantage/aadhaar-mandatory-supreme-court-order-2015",
@@ -166,7 +172,7 @@ Use of credentials should be exceptional,
 only when required,
 and always on a person's own terms.
 
-The TAG therefore encourages people integrating digital credentials with the web?
+The TAG therefore encourages people integrating digital credentials with the web
 to pay special attention to the societal impact of digital credentials.
 W3C specifications need to do more than raising awareness of risks
 and trade-offs that arise from designs.
@@ -177,7 +183,7 @@ Designs that empower people can help reduce the potential for harm.
 
 ### Concrete Harms {#harms}
 
-Even a perfectly implemented system for credentials
+Even a perfectly designed system for credentials
 creates significant new opportunities for harm
 to individual privacy and autonomy.
 
@@ -202,7 +208,7 @@ to individual privacy and autonomy.
     see [[[#options]]].
 
 
-## Uses for Identity Information {#reasons}
+## Abuse of Identity Information {#reasons}
 
 There are multiple reasons that a site might seek to ask for proof of legal identity.
 Often, there are multiple reasons that a site seeks to identify a visitor.
@@ -294,8 +300,7 @@ No such flexibility is possible when it comes to legal identity.
 ### Tracking Inherent to Credential Formats {#tracking-cred}
 
 Some credential systems use linkable presentations
-or demand live interactions with an issuer to validate presentations
-or use linkable presentations.
+or demand live interactions with an issuer to validate presentations.
 This creates a tracking risk that is inherent to the credential design.
 
 Presentations of some selective disclosure credential formats,
@@ -317,7 +322,7 @@ such as a greater risk of people being able to share credentials
 or proofs being forgeable if a cryptographically-relevant quantum computer is developed.
 
 
-## Overuse of Identity {#overuse}
+### Overuse of Identity {#overuse}
 
 Legal mandates to use official documentation is not new.
 The use of government credentials
@@ -373,7 +378,7 @@ which links fingerprints and iris scans to name and other personal details.
 Despite Aadhar use being optional in law,
 even prior to this change,
 refusals to do business were widespread in employment
-and other non-government interactions.
+and other non-government interactions [[AADHAAR-BANKS]].
 A number of government services soon
 made Aadhaar use mandatory [[AADHAAR-MANDATORY]].
 This further highlights the need for accountability,
@@ -433,7 +438,7 @@ which can be for a range of reasons:
 In some cases,
 such as Aadhaar ([[[#aadhaar]]]),
 laws could recognize the risk that people might not be able to present a credential
-and forbids discrimination against those who do not.
+and forbid discrimination against those who do not.
 However, what matters is whether refusal is respected in practice.
 
 Even if laws only permit the use of digital credentials as a convenience,
