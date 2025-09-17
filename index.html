@@ -485,7 +485,9 @@ While the universality of a generic solution is appealing,
 each use case might require a different type of solution.
 Different solutions can have dramatically different privacy characteristics.
 
+Websites must only request the information they need.
 The properties of different approaches need to be understood and matched to needs.
+
 A possible [data minimization](https://w3ctag.github.io/privacy-principles/#data-minimization) approach might choose to use selective disclosure,
 so that people can choose what is disclosed to sites.
 Such a system can accept the linkability risks
@@ -535,10 +537,14 @@ will take time.
 Developing the necessary understanding of different uses of new technology &mdash;
 and then evolving norms to handle those situations &mdash;
 is not something that can be rushed.
-[Deployment](https://developer.apple.com/videos/play/wwdc2025/232/) [is](https://developer.chrome.com/blog/digital-credentials-api-origin-trial).
 
 
 ### Authorizing Sites {#auth}
+
+Websites must only request digital credentials
+when that level of proof provides user benefit.
+Sites need to be accountable to their users
+for their use of credentials.
 
 The architecture specified in the European Union’s [digital identity eIDAS regulation](https://www.european-digital-identity-regulation.com/Preamble_11_to_20_%28Regulation_EU_2024_1183%29.html)
 envisions not only the issuance of digital credentials to individuals,
@@ -594,6 +600,11 @@ or even personhood ([[[PERSONHOOD]]]).
 
 
 ### Multiple National Credentials
+
+When presenting a credential
+no information that is not necessary to answer the request should be included.
+This includes information that can be withheld from a credential
+and information about credentials that are not authorized.
 
 Individuals with more than one nationality,
 when traveling across international borders,
@@ -656,7 +667,9 @@ effective advocates for the interests of their users.
 ## Call to Action
 
 The TAG supports the work on digital credentials.
-And we also encourage the groups working in this space to consider all the
+That work provides an oppportunity to address some of the issues this document identifies.
+
+We encourage the groups working in this space to consider all the
 risks associated with these technologies with open eyes, and to develop mitigations
 where possible. We encourage threat modelling to understand how these technologies
 can be misused and potentially lead to unintended and negative societal consequences.
